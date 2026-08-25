@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&family=Parisienne&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 @import 'tailwindcss';
 
 @theme {
-  --font-script: 'Great Vibes', cursive;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-script: 'Parisienne', 'Great Vibes', cursive;
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Jost', 'Inter', system-ui, sans-serif;
 
   --color-gold: #D4AF37;
   --color-gold-light: #E8C84A;
@@ -13,7 +13,7 @@
   --color-obsidian-2: #111111;
   --color-obsidian-3: #1A1A1A;
   --color-cream: #FDFBF7;
-  --color-cream-2: #F5F0E8;
+  --color-sand: #F5F0E8;
 }
 
 * {
@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Jost', 'Inter', system-ui, sans-serif;
   background-color: #FDFBF7;
   color: #0A0A0A;
   overflow-x: hidden;
@@ -36,9 +36,15 @@ body {
 ::-webkit-scrollbar-track { background: #0A0A0A; }
 ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
 
-.font-script { font-family: 'Great Vibes', cursive; }
-.font-serif { font-family: 'Playfair Display', Georgia, serif; }
-.font-sans { font-family: 'Inter', system-ui, sans-serif; }
+/* Hide scrollbar for category tabs */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.script-title { font-family: 'Parisienne', 'Great Vibes', cursive; }
+.font-script { font-family: 'Parisienne', 'Great Vibes', cursive; }
+.deco-title { font-family: 'Cormorant Garamond', 'Playfair Display', serif; }
+.font-serif { font-family: 'Cormorant Garamond', 'Playfair Display', serif; }
+.font-sans { font-family: 'Jost', 'Inter', system-ui, sans-serif; }
 
 /* Gold gradient text */
 .gold-text {
@@ -58,6 +64,58 @@ body {
 .card-lift:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
+}
+
+/* Glassmorphic Card */
+.glass-card {
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+/* Pill Button */
+.pill-btn {
+  background-color: #ffffff;
+  color: #0a0a0a;
+  border-radius: 9999px;
+  padding: 0.55rem 1.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+.pill-btn:hover {
+  background-color: #D4AF37;
+  color: #0A0A0A;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Marquee continuous scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Fade-in scroll animation */
@@ -102,3 +160,4 @@ input:focus, textarea:focus, select:focus {
 .instagram-grid img:hover {
   transform: scale(1.05);
 }
+
