@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-script: 'Great Vibes', cursive;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8C84A;
+  --color-gold-dim: #B8963E;
+  --color-obsidian: #0A0A0A;
+  --color-obsidian-2: #111111;
+  --color-obsidian-3: #1A1A1A;
+  --color-cream: #FDFBF7;
+  --color-cream-2: #F5F0E8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #FDFBF7;
+  color: #0A0A0A;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
+
+.font-script { font-family: 'Great Vibes', cursive; }
+.font-serif { font-family: 'Playfair Display', Georgia, serif; }
+.font-sans { font-family: 'Inter', system-ui, sans-serif; }
+
+/* Gold gradient text */
+.gold-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #E8C84A 50%, #B8963E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold border shimmer */
+.gold-border { border-color: #D4AF37; }
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
+}
+
+/* Fade-in scroll animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+/* Gold divider */
+.gold-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+  margin: 0 auto;
+}
+
+/* Nav transition */
+.nav-scrolled {
+  background: rgba(10, 10, 10, 0.97) !important;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 30px rgba(212, 175, 55, 0.1);
+}
+
+/* Input focus */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.15);
+}
+
+/* Review card stars */
+.star { color: #D4AF37; }
+
+/* Instagram grid */
+.instagram-grid img {
+  transition: transform 0.3s ease;
+}
+.instagram-grid img:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Discover luxury hair treatments and expert styling at Sindy Martinez Beauty Studio, where personalized services and professional care elevate your beauty experience.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
