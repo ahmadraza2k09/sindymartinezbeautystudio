@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "./imports/logo_modified_transparent.png";
+const logo = "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787755000/b3162c4d-f06b-4a7e-874a-2d0c29d137df_xkgyku.png";
 import sindyPhoto from "./imports/sindy_photo.jpg";
 
 type Lang = "es" | "en";
@@ -42,7 +42,9 @@ const IMAGES = {
   reconstructor: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730553/Tratamiento_reconstructor_bwjjuc.jpg",
   cejas: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730558/Laminado_y_depilacion_de_ceja_con_tinte_fnhmoy.jpg",
   igPhoneMockup: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787728869/6cc6ac47-6e4f-4e7b-b699-7aebc992121b_Background_Removed_dmg9bi.png",
-  heroBackgroundVideo: "https://res.cloudinary.com/zse1lija/video/upload/f_auto,q_auto:eco/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.mp4",
+  heroBackgroundVideoPoster: "https://res.cloudinary.com/zse1lija/video/upload/so_0,f_auto,q_auto,w_1280/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.jpg",
+  heroBackgroundVideoWebm: "https://res.cloudinary.com/zse1lija/video/upload/f_webm,q_auto:eco,w_720/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.webm",
+  heroBackgroundVideoMp4: "https://res.cloudinary.com/zse1lija/video/upload/f_mp4,q_auto:eco,w_720/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.mp4",
 };
 
 const t = {
@@ -51,6 +53,7 @@ const t = {
       home: "Inicio",
       about: "Nosotros",
       services: "Servicios",
+      reviews: "Reseñas",
       products: "Productos",
       policies: "Políticas",
       contact: "Contacto",
@@ -155,6 +158,7 @@ const t = {
       home: "Home",
       about: "About Us",
       services: "Services",
+      reviews: "Reviews",
       products: "Shop",
       policies: "Policies",
       contact: "Contact",
@@ -276,6 +280,7 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   ];
 
   const rightLinks = [
+    { label: cur.reviews, href: "#reviews" },
     { label: cur.products, href: "#products" },
     { label: cur.policies, href: "#policies" },
     { label: cur.contact, href: "#contact" },
@@ -293,57 +298,57 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
           boxShadow: "0 6px 20px rgba(0,0,0,0.08), inset 0 -1px 0 rgba(0,0,0,0.05)",
         }}
       >
-        <div className="mx-auto flex h-20 md:h-24 max-w-[1400px] items-center justify-between px-6 relative">
+        <div className="mx-auto flex h-20 md:h-24 max-w-[1400px] items-center justify-between px-6 gap-4">
           
-          {/* Mobile Logo: Pure Black */}
+          {/* Mobile Logo */}
           <div className="flex items-center gap-3 lg:hidden z-20">
             <a href="#home" className="flex items-center gap-2">
               <img
                 src={logo}
                 alt="Sindy Martinez Beauty Studio Logo"
-                className="h-14 w-auto object-contain py-1 filter brightness-0"
+                className="h-12 sm:h-14 w-auto max-w-[170px] object-contain py-1"
               />
             </a>
           </div>
 
           {/* Desktop Left Nav Links */}
-          <div className="hidden lg:flex items-center gap-8 z-10">
+          <div className="hidden lg:flex items-center justify-end gap-5 xl:gap-8 flex-1 z-10">
             {leftLinks.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                className="font-sans text-xs tracking-widest uppercase font-semibold text-[#0A0A0A] hover:text-[#D4AF37] transition-colors"
+                className="font-sans text-xs tracking-widest uppercase font-semibold text-[#0A0A0A] hover:text-[#D4AF37] transition-colors whitespace-nowrap"
               >
                 {l.label}
               </a>
             ))}
           </div>
 
-          {/* Desktop Center Brand Logo: Pure Black */}
-          <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center z-20">
+          {/* Desktop Center Brand Logo */}
+          <div className="hidden lg:flex items-center justify-center shrink-0 px-4 xl:px-8 z-20">
             <a href="#home" className="flex items-center gap-3 group">
               <img
                 src={logo}
                 alt="Sindy Martinez Beauty Studio Logo"
-                className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 py-1 filter brightness-0"
+                className="h-14 md:h-16 lg:h-18 max-h-18 w-auto max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-105 py-1"
               />
             </a>
           </div>
 
           {/* Desktop Right Links + Lang Switcher + 3D CTA Button */}
-          <div className="hidden lg:flex items-center gap-7 z-10">
+          <div className="hidden lg:flex items-center justify-start gap-5 xl:gap-7 flex-1 z-10">
             {rightLinks.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                className="font-sans text-xs tracking-widest uppercase font-semibold text-[#0A0A0A] hover:text-[#D4AF37] transition-colors"
+                className="font-sans text-xs tracking-widest uppercase font-semibold text-[#0A0A0A] hover:text-[#D4AF37] transition-colors whitespace-nowrap"
               >
                 {l.label}
               </a>
             ))}
 
             {/* Language Switcher */}
-            <div className="inline-flex items-center bg-white rounded-full px-2.5 py-1 border border-gray-300 shadow-inner cursor-pointer">
+            <div className="inline-flex items-center bg-white rounded-full px-2.5 py-1 border border-gray-300 shadow-inner cursor-pointer shrink-0">
               <button
                 onClick={() => setLang("es")}
                 className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all ${
@@ -367,7 +372,7 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
               href={getWhatsAppDefaultUrl(lang)}
               target="_blank"
               rel="noopener noreferrer"
-              className="skeuo-btn-black text-[#FDFBF7] px-7 py-3 text-xs font-semibold tracking-widest uppercase"
+              className="skeuo-btn-black text-[#FDFBF7] px-6 py-3 text-xs font-semibold tracking-widest uppercase whitespace-nowrap shrink-0"
             >
               {cur.bookNow}
             </a>
@@ -453,9 +458,11 @@ function Hero({ lang }: { lang: Lang }) {
           muted
           playsInline
           preload="auto"
+          poster={IMAGES.heroBackgroundVideoPoster}
           className="w-full h-full object-cover object-[center_22%] filter contrast-105 brightness-100 opacity-90"
         >
-          <source src={IMAGES.heroBackgroundVideo} type="video/mp4" />
+          <source src={IMAGES.heroBackgroundVideoWebm} type="video/webm" />
+          <source src={IMAGES.heroBackgroundVideoMp4} type="video/mp4" />
         </video>
         {/* Subtle, soft gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#FDFBF7]/60 via-[#FDFBF7]/35 to-[#FDFBF7]/75" />
@@ -632,31 +639,32 @@ function Testimonials({ lang }: { lang: Lang }) {
   ];
 
   return (
-    <section className="bg-white px-6 py-24 border-b border-gray-300">
+    <section id="reviews" className="bg-[#FDFBF7] px-6 py-24 border-b border-gray-300">
       <div className="max-w-[1300px] mx-auto">
         
-        <div className="mb-14 border-b border-gray-100 pb-6 text-center sm:text-left">
-          <h2 className="font-serif text-2xl sm:text-3xl text-[#0A0A0A] uppercase tracking-wider font-light">
+        <div className="mb-14 text-center">
+          <span className="font-sans text-[10px] font-bold uppercase tracking-[0.25em] text-[#B88E1C] block mb-1">
+            {lang === "es" ? "OPINIONES Y EXPERIENCIAS" : "CLIENT EXPERIENCES"}
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl uppercase tracking-wider text-[#0A0A0A] font-light">
             {cur.title}
           </h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {reviews.map((r) => (
-            <div key={r.key} className="skeuo-card-light p-8 rounded-2xl flex flex-col justify-between">
+            <div key={r.key} className="skeuo-card-light p-8 rounded-2xl flex flex-col justify-between group relative overflow-hidden">
               <div>
-                <div className="flex items-center gap-1 text-black mb-6 text-sm drop-shadow-sm">
-                  ★★★★★
-                </div>
-
-                <p className="font-sans text-xs sm:text-sm text-[#0A0A0A]/85 leading-relaxed mb-6">
-                  {r.text}
+                <p className="font-sans text-xs sm:text-sm text-[#0A0A0A]/85 leading-relaxed mb-6 italic">
+                  "{r.text}"
                 </p>
               </div>
 
-              <p className="font-sans text-xs font-semibold text-[#0A0A0A] tracking-wide pt-4 border-t border-gray-200/60">
-                {r.author}
-              </p>
+              <div className="pt-4 border-t border-gray-200/80">
+                <p className="font-sans text-xs font-bold text-[#0A0A0A] tracking-wide">
+                  {r.author}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -1269,7 +1277,8 @@ function Footer({ lang }: { lang: Lang }) {
             <ul className="space-y-2.5 font-sans text-xs text-white/70">
               <li><a href="#home" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.home}</a></li>
               <li><a href="#about" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.about}</a></li>
-              <li><a href="#full-services" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.services}</a></li>
+              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.services}</a></li>
+              <li><a href="#reviews" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.reviews}</a></li>
               <li><a href="#products" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.products}</a></li>
               <li><a href="#policies" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.policies}</a></li>
               <li><a href="#contact" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.contact}</a></li>
@@ -1297,7 +1306,7 @@ function Footer({ lang }: { lang: Lang }) {
             <img
               src={logo}
               alt="Sindy Martinez Logo Symbol"
-              className="h-16 w-auto object-contain filter brightness-0 invert mb-4 opacity-90"
+              className="h-16 w-auto object-contain mb-4 opacity-90"
             />
             <p className="font-sans text-[11px] text-[#D4AF37] uppercase tracking-wider mb-3">
               {cur.followUs}
