@@ -30,36 +30,19 @@ function getServiceWhatsAppUrl(serviceTitle: string, duration: string, price: st
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
 }
 
-function getPortfolioWhatsAppUrl(itemTitle: string, categoryLabel: string, lang: Lang) {
-  const text =
-    lang === "es"
-      ? `Hola Sindy! Vi este look en tu galería de portfolio y me encantó:\n\n*Look:* ${itemTitle}\n*Categoría:* ${categoryLabel}\n\n¿Me podrías dar información y disponibilidad para hacerme este trabajo? ¡Gracias!`
-      : `Hello Sindy! I saw this look in your portfolio gallery and loved it:\n\n*Look:* ${itemTitle}\n*Category:* ${categoryLabel}\n\nCould you give me information and availability to get this look done? Thank you!`;
-  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
-}
-
 const IMAGES = {
-  heroHome: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&h=1000&fit=crop&auto=format",
-  salonInterior: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1000&h=1000&fit=crop&auto=format",
-  graffiti: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&h=1000&fit=crop&auto=format",
-  editorialCap: "https://images.unsplash.com/photo-1605980766335-d3a41c7332a1?w=800&h=1000&fit=crop&auto=format",
-  portfolio1: "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=800&h=1000&fit=crop&auto=format",
-  portfolio2: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=1000&fit=crop&auto=format",
-  portfolio3: "https://images.unsplash.com/photo-1605980766335-d3a41c7332a1?w=800&h=1000&fit=crop&auto=format",
-  portfolio4: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&h=1000&fit=crop&auto=format",
-  portfolio5: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&h=1000&fit=crop&auto=format",
-  portfolio6: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=1000&fit=crop&auto=format",
-  ctaDark: "https://images.unsplash.com/photo-1629397685944-7073f5589754?w=1600&h=800&fit=crop&auto=format",
-  product1: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop&auto=format",
-  product2: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&h=500&fit=crop&auto=format",
-  product3: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500&h=500&fit=crop&auto=format",
-  product4: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&h=500&fit=crop&auto=format",
-  ig1: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&h=300&fit=crop&auto=format",
-  ig2: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&h=300&fit=crop&auto=format",
-  ig3: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=300&h=300&fit=crop&auto=format",
-  ig4: "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=300&h=300&fit=crop&auto=format",
-  ig5: "https://images.unsplash.com/photo-1605980766335-d3a41c7332a1?w=300&h=300&fit=crop&auto=format",
-  ig6: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=300&h=300&fit=crop&auto=format",
+  corteCabello: "https://i.pinimg.com/1200x/73/c0/46/73c04676738efbd05c9890f8a639da5b.jpg",
+  color: "https://res.cloudinary.com/zse1lija/image/upload/v1787730552/Colour_okpnan.jpg",
+  balayage: "https://res.cloudinary.com/zse1lija/image/upload/v1787730552/Balayage_evgrxo.jpg",
+  reflejos: "https://res.cloudinary.com/zse1lija/image/upload/v1787730553/Reflejos_x8xlux.jpg",
+  alisado: "https://res.cloudinary.com/zse1lija/image/upload/v1787730552/Alisado_Organico_lnortv.jpg",
+  botox: "https://res.cloudinary.com/zse1lija/image/upload/v1787730551/Botox_Capilar_zwihav.jpg",
+  aminoacidos: "https://res.cloudinary.com/zse1lija/image/upload/v1787730554/Aminoa%CC%81cidos_jxwh3y.jpg",
+  secado: "https://res.cloudinary.com/zse1lija/image/upload/v1787730554/Lavado_y_secado_jirymd.jpg",
+  reconstructor: "https://res.cloudinary.com/zse1lija/image/upload/v1787730553/Tratamiento_reconstructor_bwjjuc.jpg",
+  cejas: "https://res.cloudinary.com/zse1lija/image/upload/v1787730558/Laminado_y_depilacion_de_ceja_con_tinte_fnhmoy.jpg",
+  igPhoneMockup: "https://res.cloudinary.com/zse1lija/image/upload/v1787728869/6cc6ac47-6e4f-4e7b-b699-7aebc992121b_Background_Removed_dmg9bi.png",
+  heroBackgroundVideo: "https://res.cloudinary.com/zse1lija/video/upload/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.mp4",
 };
 
 const t = {
@@ -68,93 +51,101 @@ const t = {
       home: "Inicio",
       about: "Nosotros",
       services: "Servicios",
-      portfolio: "Galería",
       products: "Productos",
+      policies: "Políticas",
       contact: "Contacto",
       bookNow: "AGENDA TU CITA",
     },
-    topBar: {
-      hours: "Lun–Vie: 9:00 AM – 6:00 PM | Sáb: 9:00 AM – 4:00 PM",
-    },
     hero: {
-      title1: "Bienvenido a",
-      title2: "Sindy Martinez Beauty Studio",
-      subtitle: "Especialistas en balayage, colorimetría avanzada, alisados orgánicos y tratamientos de restauración profunda en Irving, Texas.",
+      title: "Sindy Martinez Beauty Studio",
+      p1: "Nos especializamos en la transformación capilar, combinando excelencia, técnicas avanzadas y productos de alta gama sin formol.",
+      p2: "Brindamos una experiencia de bienestar exclusiva y personalizada para lograr un cabello saludable, radiante y duradero.",
       bookBtn: "AGENDA TU CITA",
-      servicesBtn: "VER SERVICIOS",
-      yearsExp: "10+ Años",
-      yearsExpSub: "De Experiencia",
-      custom: "100%",
-      customSub: "Personalizado",
-      rating: "5.0 ★★★★★",
-      ratingSub: "Clientes Felices",
     },
-    editorial: {
-      sub: "Experiencia Exclusiva,",
-      titleLine1: "BALAYAGE,",
-      titleLine2: "BOTOX ORGÁNICO",
-      titleLine3: "Y RESTAURACIÓN CAPILAR",
-      desc: "Cada cita está diseñada para restaurar, fortalecer y embellecer la textura única de tu cabello con resultados duraderos.",
-    },
-    services: {
-      subtitle: "Nuestros Servicios",
-      title: "Menú de Servicios & Precios",
-      desc: "Procedimientos realizados con productos de alta gama sin formol y técnicas avanzadas de colorimetría.",
-      bookBtn: "Reservar Cita",
+    featuredServices: {
+      title: "Nuestros Servicios Destacados",
+      card1: {
+        title: "Alisados y Transformación",
+        desc: "Tratamientos especializados para eliminar el frizz, alisar el cabello y lograr un acabado suave, brillante y de larga duración.",
+        btn: "Conoce Más",
+      },
+      card2: {
+        title: "Reparación y Cuidado Capilar",
+        desc: "Recuperamos la salud del cabello con tratamientos intensivos que hidratan, nutren y reconstruyen la fibra capilar.",
+        btn: "Conoce Más",
+      },
+      card3: {
+        title: "Corte y Mantenimiento",
+        desc: "Servicios diseñados para mantener tu cabello saludable, fuerte y con un aspecto impecable.",
+        btn: "Conoce Más",
+      },
+      card4: {
+        title: "Belleza de Cejas y Pestañas",
+        desc: "Realzamos tu mirada con técnicas profesionales para unas cejas definidas y unas pestañas con un acabado natural y elegante.",
+        btn: "Conoce Más",
+      },
     },
     founder: {
-      sub: "Mi nombre es,",
-      title: "Sindy Martinez",
+      name: "Sindy Martinez",
       tag: "Fundadora & Cosmetóloga Licenciada",
-      p1: "Mi pasión es transformar la salud y la belleza del cabello a través de técnicas especializadas, productos de alta calidad y una atención completamente personalizada.",
-      p2: "Creo que cada persona merece sentirse segura, hermosa y bien cuidada, por eso me esfuerzo en ofrecer una experiencia exclusiva donde el bienestar y la excelencia están presentes en cada detalle.",
-      p3: "Mi compromiso es ayudarte a descubrir la mejor versión de tu cabello con resultados saludables, naturales y duraderos.",
+      aboutText:
+        "Beautystudio_SindyM es un estudio de belleza gestionado por una estilista profesional con una pasión por realzar la belleza a través de servicios de alta calidad. Nos especializamos en el cuidado capilar Alisado permanente Orgánico, Terapias de Hidratación, Reparación, Botox Capilar Aminoácidos, Cortes de cabello, Color profesional, Balayage, Highlights, en Beautystudio_SindyM te garantizamos un servicio excepcional que resalta tu belleza natural y te hace sentir radiante en cada visita. ¡Déjanos consentirte y resaltar tu belleza única!",
       waBtn: "Hablar por WhatsApp",
       igBtn: "Ver Instagram",
     },
-    portfolio: {
-      title: "Galería de Trabajos",
-      sub: "Resultados Reales en Nuestro Estudio",
-      all: "Todos",
-      balayage: "Balayage & Color",
-      smoothing: "Alisados & Botox",
-      cuts: "Cortes & Peinados",
-      therapy: "Terapias Capilares",
-      inquireBtn: "Consultar Este Look",
+    policies: {
+      title: "Políticas y Términos / Policy and Terms",
+      text: "Al reservar con SindyM_BeautyStudio, usted acepta estas Políticas y Términos. SindyM_BeautyStudio puede cancelar o reprogramar una cita confirmada si es necesario y le notificará lo antes posible. Por favor, llegue a tiempo; llegar tarde puede reducir la duración de su servicio o requerir una reprogramación. Si necesita cancelar o reprogramar, hágalo con la mayor antelación posible; las cancelaciones tardías y las ausencias pueden generar un cargo.",
     },
     testimonials: {
-      sub: "Opiniones de Clientes",
-      title: "Reseñas & Experiencias Reales",
+      title: "Reseñas de Clientes",
+      r1: {
+        text: "Excelente experiencia en SINDY MARTINEZ BEAUTY STUDIO. Desde que llegué me hicieron sentir súper cómoda. El resultado me encantó, mi cabello quedó hermoso, suave y con un brillo increíble. Se nota el profesionalismo y el cuidado en cada detalle.",
+        author: "- Emma Pirela",
+      },
+      r2: {
+        text: "La mejor experiencia y cuidado para mi cabello y mis cejitas! Atención, profesionalismo, calidad de servicios y productos TODO 10/10 y el calor, humedad y cariño con el que te reciben siempre vale oro. ME ENCANTA aquí",
+        author: "- Gabriela González",
+      },
+      r3: {
+        text: "Soy clienta desde hace más de 3 años y ¡estoy encantada! Siempre me hago el alisado y el corte de pelo aquí, y el resultado siempre es impecable. El servicio es excelente: muy atento y profesional. ¡Los recomiendo ampliamente!",
+        author: "- Emilia Alegre da Silva",
+      },
     },
-    cta: {
-      title: "¿Nos vemos pronto?",
-      desc: "Agenda tu cita hoy mismo y dale a tu cabello el cuidado profesional que merece.",
-      bookBtn: "Reservar Cita Ahora",
+    fullServicesShowcase: {
+      title: "Servicios & Precios",
+      sub: "Procedimientos realizados con productos de alta gama sin formol y técnicas avanzadas.",
+      bookBtn: "Reservar Cita por WhatsApp",
     },
     products: {
-      sub: "Cuida Tu Cabello En Casa",
       title: "Línea de Productos Profesionales",
+      sub: "Cuida tu cabello en casa con nuestra selección de productos recomendados",
       orderBtn: "Ordenar por WhatsApp",
     },
     contact: {
-      sub: "Hablemos",
-      title: "Contacto & Citas",
+      title: "Hablemos",
       desc: "Descubre el tratamiento perfecto para un cabello saludable y radiante.",
-      name: "Nombre Completo",
+      name: "Nombre",
       email: "Email",
       phone: "Teléfono",
       service: "Servicio de Interés",
       message: "Mensaje / Consulta",
       submitBtn: "ENVIAR MENSAJE VIA WHATSAPP",
     },
+    hours: {
+      title: "Horarios de Atención",
+      sunday: "Domingo: Cerrado",
+      monday: "Lunes: 9:00 AM - 6:00 PM",
+      tuesday: "Martes: 9:00 AM - 6:00 PM",
+      wednesday: "Miércoles: 9:00 AM - 6:00 PM",
+      thursday: "Jueves: 9:00 AM - 6:00 PM",
+      friday: "Viernes: 9:00 AM - 6:00 PM",
+      saturday: "Sábado: 9:00 AM - 4:00 PM",
+    },
     footer: {
       about: "Sindy Martinez Beauty Studio en Irving, TX. Especialistas en balayage, colorimetría y tratamientos de restauración capilar.",
       navTitle: "Navegación",
-      specialtiesTitle: "Especialidades",
       locationTitle: "Ubicación & Horarios",
-      mondayFri: "Lunes a Viernes: 9:00 AM – 6:00 PM",
-      saturday: "Sábado: 9:00 AM – 4:00 PM",
-      sunday: "Domingo: Cerrado",
       followUs: "Síguenos",
       rights: "Sindy Martinez Beauty Studio. Todos los derechos reservados.",
     },
@@ -164,77 +155,79 @@ const t = {
       home: "Home",
       about: "About Us",
       services: "Services",
-      portfolio: "Gallery",
       products: "Shop",
+      policies: "Policies",
       contact: "Contact",
       bookNow: "BOOK APPOINTMENT",
     },
-    topBar: {
-      hours: "Mon–Fri: 9:00 AM – 6:00 PM | Sat: 9:00 AM – 4:00 PM",
-    },
     hero: {
-      title1: "Meet me at",
-      title2: "Sindy Martinez Beauty Studio",
-      subtitle: "Specialists in balayage, advanced colorimetry, organic smoothing, and deep hair restoration therapies in Irving, Texas.",
+      title: "Sindy Martinez Beauty Studio",
+      p1: "We specialize in hair transformation, combining excellence, advanced techniques, and premium formaldehyde-free products.",
+      p2: "We deliver an exclusive, personalized wellness experience focused on achieving healthy, radiant, long-lasting hair.",
       bookBtn: "BOOK APPOINTMENT",
-      servicesBtn: "VIEW SERVICES",
-      yearsExp: "10+ Years",
-      yearsExpSub: "Of Experience",
-      custom: "100%",
-      customSub: "Personalized",
-      rating: "5.0 ★★★★★",
-      ratingSub: "Happy Clients",
     },
-    editorial: {
-      sub: "Exclusive Experience,",
-      titleLine1: "BALAYAGE,",
-      titleLine2: "ORGANIC BOTOX",
-      titleLine3: "& HAIR RESTORATION",
-      desc: "Every appointment is tailored to restore, strengthen, and elevate your signature look with long-lasting results.",
-    },
-    services: {
-      subtitle: "Our Services",
-      title: "Services Menu & Pricing",
-      desc: "Procedures performed with formaldehyde-free premium products and advanced colorimetry techniques.",
-      bookBtn: "Book Appointment",
+    featuredServices: {
+      title: "Our Featured Services",
+      card1: {
+        title: "Straightening & Transformation",
+        desc: "Specialized treatments to eliminate frizz, smooth hair, and achieve a soft, shiny, long-lasting finish.",
+        btn: "Learn More",
+      },
+      card2: {
+        title: "Hair Repair & Care",
+        desc: "We restore hair health with intensive treatments that hydrate, nourish, and rebuild the hair fiber.",
+        btn: "Learn More",
+      },
+      card3: {
+        title: "Cut & Maintenance",
+        desc: "Services designed to keep your hair healthy, strong, and looking flawless at all times.",
+        btn: "Learn More",
+      },
+      card4: {
+        title: "Brows & Lashes Beauty",
+        desc: "We enhance your look with professional techniques for defined eyebrows and natural, elegant lashes.",
+        btn: "Learn More",
+      },
     },
     founder: {
-      sub: "My name is,",
-      title: "Sindy Martinez",
+      name: "Sindy Martinez",
       tag: "Founder & Licensed Cosmetologist",
-      p1: "My passion is transforming the health and beauty of hair through specialized techniques, high quality products, and completely personalized attention.",
-      p2: "I believe everyone deserves to feel confident, beautiful, and cared for, which is why I strive to offer an exclusive experience where well-being and excellence are present in every detail.",
-      p3: "My commitment is to help you discover the best version of your hair with healthy, natural, and long-lasting results.",
+      aboutText:
+        "Beautystudio_SindyM is a beauty studio managed by a professional stylist passionate about enhancing beauty through high-quality services. We specialize in hair care including Organic Permanent Straightening, Hydration & Repair Therapies, Hair Botox, Amino Acids, Haircuts, Professional Hair Color, Balayage, and Highlights. At Beautystudio_SindyM, we guarantee exceptional service that highlights your natural beauty and leaves you feeling radiant on every visit. Let us pamper you and bring out your unique beauty!",
       waBtn: "Chat on WhatsApp",
       igBtn: "View Instagram",
     },
-    portfolio: {
-      title: "Work Gallery",
-      sub: "Real Results at Our Studio",
-      all: "All",
-      balayage: "Balayage & Color",
-      smoothing: "Smoothing & Botox",
-      cuts: "Cuts & Styling",
-      therapy: "Hair Therapies",
-      inquireBtn: "Inquire This Look",
+    policies: {
+      title: "Policy and Terms",
+      text: "By booking with SindyM_BeautyStudio, you agree to these Policies and Terms. SindyM_BeautyStudio may cancel or reschedule a confirmed appointment if necessary and will notify you as soon as possible. Please arrive on time; arriving late may reduce the duration of your service or require rescheduling. If you need to cancel or reschedule, please do so as far in advance as possible; late cancellations and no-shows may incur a fee.",
     },
     testimonials: {
-      sub: "Client Reviews",
-      title: "Real Experiences & Reviews",
+      title: "Client Reviews",
+      r1: {
+        text: "Excellent experience at SINDY MARTINEZ BEAUTY STUDIO. From the moment I arrived, they made me feel super comfortable. I loved the result—my hair turned out beautiful, soft, and amazingly shiny. Professionalism and care in every detail!",
+        author: "- Emma Pirela",
+      },
+      r2: {
+        text: "The best experience and hair care for my hair and brows! Attention, professionalism, quality of services and products 10/10. The warmth and care you receive here is worth gold. I LOVE it here!",
+        author: "- Gabriela González",
+      },
+      r3: {
+        text: "I've been a client for over 3 years and I'm delighted! I always get my hair straightening and haircut here, and the result is always impeccable. Excellent service!",
+        author: "- Emilia Alegre da Silva",
+      },
     },
-    cta: {
-      title: "See You Soon",
-      desc: "Book your appointment today and give your hair the professional care it deserves.",
-      bookBtn: "Book Appointment Now",
+    fullServicesShowcase: {
+      title: "Full Services Showcase",
+      sub: "Procedures performed with formaldehyde-free premium products and advanced techniques.",
+      bookBtn: "Book via WhatsApp",
     },
     products: {
-      sub: "Care For Your Hair At Home",
       title: "Professional Hair Care Line",
+      sub: "Maintain your hair at home with our recommended salon products",
       orderBtn: "Order via WhatsApp",
     },
     contact: {
-      sub: "Let's Talk",
-      title: "Contact & Appointments",
+      title: "Let's Talk",
       desc: "Discover the perfect treatment for healthy, radiant hair.",
       name: "Full Name",
       email: "Email Address",
@@ -243,159 +236,33 @@ const t = {
       message: "Message / Query",
       submitBtn: "SEND WHATSAPP MESSAGE",
     },
-    footer: {
-      about: "Sindy Martinez Beauty Studio in Irving, TX. Specialists in balayage, colorimetry, and professional hair restoration therapies.",
-      navTitle: "Navigation",
-      specialtiesTitle: "Specialties",
-      locationTitle: "Location & Hours",
-      mondayFri: "Monday – Friday: 9:00 AM – 6:00 PM",
-      saturday: "Saturday: 9:00 AM – 4:00 PM",
+    hours: {
+      title: "Operating Hours",
       sunday: "Sunday: Closed",
+      monday: "Monday: 9:00 AM - 6:00 PM",
+      tuesday: "Tuesday: 9:00 AM - 6:00 PM",
+      wednesday: "Wednesday: 9:00 AM - 6:00 PM",
+      thursday: "Thursday: 9:00 AM - 6:00 PM",
+      friday: "Friday: 9:00 AM - 6:00 PM",
+      saturday: "Saturday: 9:00 AM - 4:00 PM",
+    },
+    footer: {
+      about: "Sindy Martinez Beauty Studio en Irving, TX. Especialistas en balayage, colorimetría y tratamientos de restauración capilar.",
+      navTitle: "Navigation",
+      locationTitle: "Location & Hours",
       followUs: "Follow Us",
       rights: "Sindy Martinez Beauty Studio. All rights reserved.",
     },
   },
 };
 
-// ─── EXACT REAL SALON SERVICES MENU LIST ──────────────────────────────────────
-const SERVICES_MENU = {
-  es: [
-    {
-      title: "Corte de cabello",
-      duration: "40 min",
-      price: "$30",
-      desc: "Corte de cabello profesional adaptado a la forma de tu rostro y tu estilo único.",
-    },
-    {
-      title: "Color",
-      duration: "2 h 30 min",
-      price: "$160+",
-      desc: "Servicio de coloración profesional para el cabello. Ofrecemos una amplia gama de tonos y técnicas para satisfacer tus necesidades de color personalizado. ¡Reserva tu cita hoy!",
-    },
-    {
-      title: "Balayage",
-      duration: "7 h",
-      price: "$380+",
-      desc: "Balayage es un servicio de coloración de cabello que crea un efecto degradado y natural. Ideal para iluminar y dar dimensión al cabello.",
-      tag: "POPULAR",
-    },
-    {
-      title: "Reflejos",
-      duration: "7 h",
-      price: "$380+",
-      desc: "Reflejos ofrece servicios de peluquería y belleza en un ambiente relajante y acogedor. Nuestros profesionales expertos te ayudarán a resaltar tu belleza natural.",
-    },
-    {
-      title: "Alisado Orgánico",
-      duration: "5 h 30 min",
-      price: "$240+",
-      desc: "Tratamiento de keratina para un cabello suave, brillante y sin frizz. Restaura y fortalece el cabello, dejándolo más manejable y saludable. ¡Reserva tu cita ahora!",
-      tag: "TRATAMIENTO ESTRELLA",
-    },
-    {
-      title: "Botox Capilar",
-      duration: "2 h",
-      price: "$100 - $150",
-      desc: "Botox Capilar es un tratamiento intensivo que restaura la salud del cabello, aumenta el brillo y suavidad, y reduce el frizz. Resultados inmediatos y duraderos.",
-    },
-    {
-      title: "Aminoácidos",
-      duration: "3 h",
-      price: "$130 - $160",
-      desc: "Tratamiento intensivo para restaurar y darle brillo al cabello eliminando el frizz hasta por 3 meses.",
-    },
-    {
-      title: "Lavado y secado",
-      duration: "1 h 30 min",
-      price: "$50 - $80",
-      desc: "Lavado con shampoo profesional, mascarilla exprés y un secado o peinado con ondas impecables.",
-    },
-    {
-      title: "Tratamiento Reconstructor",
-      duration: "2 h",
-      price: "$120",
-      desc: "Tratamiento reconstructor intensivo para reparar profundamente la hebra capilar maltratada.",
-    },
-    {
-      title: "Laminado y Depilación de Ceja con Tinte",
-      duration: "45 min",
-      price: "Consulta WhatsApp",
-      desc: "Cejas perfectas, definidas y con un efecto natural. El laminado de cejas ayuda a alinear, dar forma y crear una apariencia más llena por semanas.",
-    },
-  ],
-  en: [
-    {
-      title: "Haircut",
-      duration: "40 min",
-      price: "$30",
-      desc: "Professional haircut tailored to frame your face and suit your unique style.",
-    },
-    {
-      title: "Hair Color",
-      duration: "2 h 30 min",
-      price: "$160+",
-      desc: "Professional hair coloring service. We offer a wide range of shades and custom techniques to meet your color goals.",
-    },
-    {
-      title: "Balayage",
-      duration: "7 h",
-      price: "$380+",
-      desc: "Balayage hair coloring service that creates a natural gradient effect. Ideal to brighten and add dimension to hair.",
-      tag: "POPULAR",
-    },
-    {
-      title: "Highlights (Reflejos)",
-      duration: "7 h",
-      price: "$380+",
-      desc: "Expert highlighting services in a relaxing environment. Our professional stylists help highlight your natural beauty.",
-    },
-    {
-      title: "Organic Straightening (Alisado)",
-      duration: "5 h 30 min",
-      price: "$240+",
-      desc: "Keratin smoothing treatment for soft, shiny, frizz-free hair. Restores and strengthens the hair fiber.",
-      tag: "STAR TREATMENT",
-    },
-    {
-      title: "Hair Botox",
-      duration: "2 h",
-      price: "$100 - $150",
-      desc: "Intensive treatment that restores hair health, increases shine and softness, and reduces frizz. Immediate results.",
-    },
-    {
-      title: "Amino Acids Treatment",
-      duration: "3 h",
-      price: "$130 - $160",
-      desc: "Intensive treatment to restore and give shine to hair while eliminating frizz for up to 3 months.",
-    },
-    {
-      title: "Wash & Blowout (Secado)",
-      duration: "1 h 30 min",
-      price: "$50 - $80",
-      desc: "Wash with professional shampoo, express hair mask, and a flawless blowout or wavy styling.",
-    },
-    {
-      title: "Reconstructive Treatment",
-      duration: "2 h",
-      price: "$120",
-      desc: "Intensive reconstruction treatment to deeply repair damaged hair strands.",
-    },
-    {
-      title: "Eyebrow Lamination, Shaping & Tint",
-      duration: "45 min",
-      price: "Inquire WhatsApp",
-      desc: "Perfect, defined, natural-looking brows. Lamination helps align, shape, and create a fuller appearance for weeks.",
-    },
-  ],
-};
-
-// ─── MINIMALIST HEADER & NAVBAR ───────────────────────────────────────────────
+// ─── HEADER / NAVIGATION (CLEAN PURE BLACK LOGO) ──────────────────────────────
 function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40);
+    const handler = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -405,88 +272,91 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   const leftLinks = [
     { label: cur.home, href: "#home" },
     { label: cur.about, href: "#about" },
-    { label: cur.services, href: "#services" },
+    { label: cur.services, href: "#full-services" },
   ];
 
   const rightLinks = [
-    { label: cur.portfolio, href: "#portfolio" },
     { label: cur.products, href: "#products" },
+    { label: cur.policies, href: "#policies" },
     { label: cur.contact, href: "#contact" },
   ];
 
   return (
     <header className="sticky top-0 z-50 transition-all duration-300">
       <nav
-        className="w-full transition-all duration-300 border-b border-[#D4AF37]/25"
+        className="w-full transition-all duration-300 border-b border-gray-300 shadow-md"
         style={{
-          background: scrolled ? "rgba(10, 10, 10, 0.98)" : "rgba(10, 10, 10, 0.94)",
-          backdropFilter: "blur(12px)",
+          background: scrolled
+            ? "linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(245,240,232,0.97) 100%)"
+            : "linear-gradient(180deg, rgba(253,251,247,0.98) 0%, rgba(247,243,235,0.95) 100%)",
+          backdropFilter: "blur(16px)",
+          boxShadow: "0 6px 20px rgba(0,0,0,0.08), inset 0 -1px 0 rgba(0,0,0,0.05)",
         }}
       >
-        <div className="mx-auto flex h-24 md:h-28 max-w-[1400px] items-center justify-between px-6 relative">
+        <div className="mx-auto flex h-20 md:h-24 max-w-[1400px] items-center justify-between px-6 relative">
           
-          {/* MOBILE LEFT PURE WHITE TEXT LOGO (PROMINENT HD SIZE) */}
+          {/* Mobile Logo: Pure Black */}
           <div className="flex items-center gap-3 lg:hidden z-20">
             <a href="#home" className="flex items-center gap-2">
               <img
                 src={logo}
                 alt="Sindy Martinez Beauty Studio Logo"
-                className="h-14 sm:h-16 w-auto object-contain filter brightness-0 invert py-1"
+                className="h-14 w-auto object-contain py-1 filter brightness-0"
               />
             </a>
           </div>
 
-          {/* Desktop Left Navigation Links */}
-          <div className="hidden lg:flex items-center gap-9 z-10">
+          {/* Desktop Left Nav Links */}
+          <div className="hidden lg:flex items-center gap-8 z-10">
             {leftLinks.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                className="font-sans text-xs tracking-wider uppercase font-medium text-[#FDFBF7]/85 hover:text-[#D4AF37] transition-colors"
+                className="font-sans text-xs tracking-widest uppercase font-semibold text-[#0A0A0A] hover:text-[#D4AF37] transition-colors"
               >
                 {l.label}
               </a>
             ))}
           </div>
 
-          {/* DESKTOP CENTER PURE WHITE TEXT LOGO (PROMINENT HD SIZE) */}
+          {/* Desktop Center Brand Logo: Pure Black */}
           <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center z-20">
             <a href="#home" className="flex items-center gap-3 group">
               <img
                 src={logo}
                 alt="Sindy Martinez Beauty Studio Logo"
-                className="h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter brightness-0 invert py-1"
+                className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 py-1 filter brightness-0"
               />
             </a>
           </div>
 
-          {/* Right Navigation Links + Language Toggle + Pill CTA */}
-          <div className="hidden lg:flex items-center gap-8 z-10">
+          {/* Desktop Right Links + Lang Switcher + 3D CTA Button */}
+          <div className="hidden lg:flex items-center gap-7 z-10">
             {rightLinks.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                className="font-sans text-xs tracking-wider uppercase font-medium text-[#FDFBF7]/85 hover:text-[#D4AF37] transition-colors"
+                className="font-sans text-xs tracking-widest uppercase font-semibold text-[#0A0A0A] hover:text-[#D4AF37] transition-colors"
               >
                 {l.label}
               </a>
             ))}
 
             {/* Language Switcher */}
-            <div className="inline-flex items-center bg-white/10 rounded-full px-2.5 py-0.5 border border-[#D4AF37]/40 cursor-pointer">
+            <div className="inline-flex items-center bg-white rounded-full px-2.5 py-1 border border-gray-300 shadow-inner cursor-pointer">
               <button
                 onClick={() => setLang("es")}
-                className={`px-2 py-0.5 rounded-full text-[10px] font-bold transition-all ${
-                  lang === "es" ? "bg-[#D4AF37] text-[#0A0A0A]" : "text-white/70 hover:text-white"
+                className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all ${
+                  lang === "es" ? "skeuo-btn-black text-white" : "text-[#0A0A0A]/70 hover:text-black"
                 }`}
               >
                 ES
               </button>
-              <span className="text-white/40 mx-1">|</span>
+              <span className="text-black/30 mx-1">|</span>
               <button
                 onClick={() => setLang("en")}
-                className={`px-2 py-0.5 rounded-full text-[10px] font-bold transition-all ${
-                  lang === "en" ? "bg-[#D4AF37] text-[#0A0A0A]" : "text-white/70 hover:text-white"
+                className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all ${
+                  lang === "en" ? "skeuo-btn-black text-white" : "text-[#0A0A0A]/70 hover:text-black"
                 }`}
               >
                 EN
@@ -497,22 +367,22 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
               href={getWhatsAppDefaultUrl(lang)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full px-7 py-3 text-xs font-semibold tracking-wide uppercase transition-all bg-[#D4AF37] text-[#0A0A0A] hover:bg-white hover:text-[#0A0A0A] shadow-sm"
+              className="skeuo-btn-black text-[#FDFBF7] px-7 py-3 text-xs font-semibold tracking-widest uppercase"
             >
               {cur.bookNow}
             </a>
           </div>
 
-          {/* Mobile Hamburger & Mobile Language Switcher */}
+          {/* Mobile Right Controls */}
           <div className="lg:hidden ml-auto z-10 flex items-center gap-3">
             <button
               onClick={() => setLang(lang === "es" ? "en" : "es")}
-              className="text-xs font-bold px-3 py-1 bg-[#D4AF37] text-[#0A0A0A] rounded-full"
+              className="text-xs font-bold px-3 py-1 skeuo-btn-black text-white rounded-full"
             >
               {lang.toUpperCase()}
             </button>
             <button
-              className="text-[#D4AF37] p-2 focus:outline-none"
+              className="text-[#0A0A0A] p-2 focus:outline-none"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
@@ -540,14 +410,14 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Nav Drawer */}
         {menuOpen && (
-          <div className="lg:hidden px-6 py-6 border-t border-white/10 flex flex-col gap-4 bg-[#0A0A0A]">
+          <div className="lg:hidden px-6 py-6 border-t border-gray-200 flex flex-col gap-4 bg-[#FDFBF7] shadow-xl">
             {[...leftLinks, ...rightLinks].map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                className="font-sans text-xs tracking-widest uppercase text-[#FDFBF7]/80 hover:text-[#D4AF37] py-1 border-b border-white/5"
+                className="font-sans text-xs tracking-widest uppercase text-[#0A0A0A] hover:text-[#D4AF37] py-1 border-b border-gray-100"
                 onClick={() => setMenuOpen(false)}
               >
                 {l.label}
@@ -557,7 +427,7 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
               href={getWhatsAppDefaultUrl(lang)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 text-center rounded-full py-3.5 font-sans text-xs font-semibold tracking-widest uppercase bg-[#D4AF37] text-[#0A0A0A]"
+              className="mt-2 text-center py-3.5 font-sans text-xs font-semibold tracking-widest uppercase skeuo-btn-black text-white"
             >
               {cur.bookNow}
             </a>
@@ -568,392 +438,114 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   );
 }
 
-// ─── HERO SECTION ─────────────────────────────────────────────────────────────
+// ─── HERO SECTION (100% FULL SCREEN VIEWPORT VIDEO COVER) ─────────────────────
 function Hero({ lang }: { lang: Lang }) {
   const cur = t[lang].hero;
 
   return (
-    <section id="home" className="relative">
-      <img
-        src={IMAGES.heroHome}
-        alt="Luxury hair salon model"
-        width="1600"
-        height="1008"
-        className="h-[calc(100vh-5rem)] min-h-[520px] w-full object-cover object-center"
-      />
-      <div className="absolute inset-0 bg-[#0A0A0A]/40" />
+    <section id="home" className="bg-[#FDFBF7] border-b border-gray-300 relative overflow-hidden min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-96px)] flex flex-col justify-center items-center py-16 sm:py-24">
+      
+      {/* Full Page Viewport Background Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover object-[center_22%] filter contrast-105 brightness-100 opacity-90"
+        >
+          <source src={IMAGES.heroBackgroundVideo} type="video/mp4" />
+        </video>
+        {/* Subtle, soft gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FDFBF7]/60 via-[#FDFBF7]/35 to-[#FDFBF7]/75" />
+      </div>
 
-      <div className="absolute inset-0 flex items-center justify-center px-6">
-        <div className="max-w-3xl text-center text-[#FDFBF7]">
-          <p className="font-sans text-xs sm:text-sm tracking-[0.25em] text-[#FDFBF7]/85 uppercase font-medium mb-3">
-            {cur.title1}
-          </p>
+      <div className="mx-auto max-w-4xl px-6 relative z-10 flex flex-col items-center text-center">
+        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#0A0A0A] font-light leading-[1.15] mb-6 tracking-tight drop-shadow-md">
+          Sindy Martinez <br />
+          <span className="font-normal text-[#1A1A1A]">Beauty Studio</span>
+        </h1>
 
-          <h1 className="font-script text-6xl sm:text-7xl md:text-8xl text-[#D4AF37] font-normal leading-none drop-shadow-md mb-2">
-            Sindy Martinez
-          </h1>
-
-          <p className="font-serif tracking-[0.35em] text-[#FDFBF7] uppercase font-bold text-lg sm:text-2xl md:text-3xl border-y border-[#D4AF37]/30 py-2 px-6 inline-block my-2">
-            BEAUTY STUDIO
-          </p>
-
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed opacity-90 font-sans">
-            {cur.subtitle}
-          </p>
-
-          <div className="mt-9 flex flex-wrap justify-center gap-4 font-sans">
-            <a
-              href={getWhatsAppDefaultUrl(lang)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-w-[9.5rem] items-center justify-center rounded-full px-8 py-3.5 text-xs tracking-wider uppercase font-semibold transition-all bg-[#D4AF37] text-[#0A0A0A] hover:bg-white hover:text-[#0A0A0A] shadow-md"
-            >
-              {cur.bookBtn}
-            </a>
-            <a
-              href="#services"
-              className="inline-flex min-w-[9.5rem] items-center justify-center rounded-full px-8 py-3.5 text-xs tracking-wider uppercase font-semibold transition-all border border-white text-white hover:bg-white/10"
-            >
-              {cur.servicesBtn}
-            </a>
-          </div>
+        {/* Clean Natural Description Text */}
+        <div className="space-y-4 text-sm sm:text-base text-[#0A0A0A] leading-relaxed font-sans max-w-2xl text-center font-normal">
+          <p>{cur.p1}</p>
+          <p>{cur.p2}</p>
         </div>
-      </div>
-    </section>
-  );
-}
 
-// ─── EDITORIAL SPLIT BANNER SECTION ───────────────────────────────────────────
-function EditorialBanner({ lang }: { lang: Lang }) {
-  const cur = t[lang].editorial;
-
-  return (
-    <section className="grid md:grid-cols-2">
-      <div className="flex flex-col justify-center bg-[#0A0A0A] px-8 py-16 text-[#FDFBF7] md:px-14">
-        <p className="script-title text-3xl md:text-4xl text-[#FDFBF7]/90">
-          {cur.sub}
-        </p>
-        <h2 className="deco-title mt-2 text-3xl uppercase leading-[1.35] tracking-[0.08em] text-[#D4AF37] md:text-4xl">
-          {cur.titleLine1}<br />
-          {cur.titleLine2}<br />
-          {cur.titleLine3}
-        </h2>
-        <p className="mt-8 max-w-md text-sm leading-relaxed opacity-90 font-sans">
-          {cur.desc}
-        </p>
-      </div>
-
-      <div className="grid grid-cols-2 p-4 bg-[#0A0A0A] gap-4">
-        <img
-          src={IMAGES.graffiti}
-          alt="Luxury salon work 1"
-          width="800"
-          height="1000"
-          loading="lazy"
-          className="h-full w-full object-cover min-h-[320px] rounded-2xl"
-        />
-        <img
-          src={IMAGES.editorialCap}
-          alt="Luxury salon work 2"
-          width="1008"
-          height="1008"
-          loading="lazy"
-          className="h-full w-full object-cover min-h-[320px] rounded-2xl"
-        />
-      </div>
-    </section>
-  );
-}
-
-// ─── MINIMALIST SERVICES SECTION (WITH ALL 10 EXACT REAL SALON SERVICES) ─────
-function Services({ lang }: { lang: Lang }) {
-  const cur = t[lang].services;
-  const list = SERVICES_MENU[lang];
-
-  return (
-    <section id="services" className="bg-[#FDFBF7] px-6 py-20">
-      <div className="text-center mb-16">
-        <p className="font-script text-[#D4AF37] text-3xl md:text-4xl mb-1">
-          {cur.subtitle}
-        </p>
-        <h2 className="deco-title text-center text-3xl md:text-4xl uppercase tracking-[0.14em] text-[#0A0A0A]">
-          {cur.title}
-        </h2>
-        <p className="font-sans text-xs md:text-sm text-[#0A0A0A]/60 max-w-lg mx-auto mt-3">
-          {cur.desc}
-        </p>
-      </div>
-
-      <div className="mx-auto max-w-[1300px] grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
-        {list.map((s, i) => (
-          <article
-            key={i}
-            className="border border-[#D4AF37]/25 bg-white p-7 text-left transition-all duration-300 hover:border-[#D4AF37] shadow-sm hover:shadow-md rounded-2xl flex flex-col justify-between relative group"
+        <div className="mt-9">
+          <a
+            href={getWhatsAppDefaultUrl(lang)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="skeuo-btn-black text-white px-9 py-4 text-xs font-bold tracking-[0.18em] uppercase inline-flex items-center gap-2 shadow-2xl"
           >
-            {s.tag && (
-              <span className="absolute -top-3 right-6 bg-[#D4AF37] text-[#0A0A0A] font-sans font-bold text-[9px] uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
-                {s.tag}
-              </span>
-            )}
-            <div>
-              <div className="flex items-center justify-between gap-4 mb-3 border-b border-gray-100 pb-3">
-                <h3 className="font-serif font-bold text-lg md:text-xl text-[#0A0A0A] leading-snug">
-                  {s.title}
-                </h3>
-                <span className="font-sans font-bold text-sm text-[#D4AF37] bg-[#0A0A0A] px-3 py-1 rounded-full whitespace-nowrap">
-                  {s.price}
-                </span>
-              </div>
-
-              <div className="inline-flex items-center gap-1.5 text-xs text-gray-500 font-sans font-medium mb-3">
-                <span className="text-[#D4AF37]">⏱</span>
-                <span>{s.duration}</span>
-              </div>
-
-              <p className="font-sans text-xs leading-relaxed text-[#0A0A0A]/75 mb-6">
-                {s.desc}
-              </p>
-            </div>
-
-            <a
-              href={getServiceWhatsAppUrl(s.title, s.duration, s.price, lang)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full py-3 rounded-full text-xs font-sans font-bold tracking-wider uppercase bg-[#0A0A0A] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition-all shadow-sm mt-auto"
-            >
-              {cur.bookBtn} <span className="ml-1 text-sm">➔</span>
-            </a>
-          </article>
-        ))}
+            <span>{cur.bookBtn}</span>
+            <span className="text-sm">➔</span>
+          </a>
+        </div>
       </div>
     </section>
   );
 }
 
-// ─── MEET THE FOUNDER SECTION (SINDY MARTINEZ) ───────────────────────────────
-function Founder({ lang }: { lang: Lang }) {
-  const cur = t[lang].founder;
+// ─── FEATURED SERVICES SECTION ───────────────────────────────────────────────
+function FeaturedServices({ lang }: { lang: Lang }) {
+  const cur = t[lang].featuredServices;
+
+  const cards = [
+    { ...cur.card1, key: "c1" },
+    { ...cur.card2, key: "c2" },
+    { ...cur.card3, key: "c3" },
+    { ...cur.card4, key: "c4" },
+  ];
 
   return (
-    <section id="about" className="bg-[#FDFBF7] px-6 py-20 border-t border-gray-200">
-      <div className="mx-auto max-w-[1200px] grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Column: Sindy Photo */}
-        <div className="relative">
-          <img
-            src={sindyPhoto}
-            alt="Sindy Martinez, Licensed Cosmetologist"
-            className="w-full h-[520px] object-cover object-top border border-gray-200 shadow-md rounded-2xl"
-          />
-          <div className="absolute bottom-6 right-6 bg-white p-4 shadow-xl border border-gray-200 rounded-2xl max-w-[220px]">
-            <p className="deco-title text-sm uppercase tracking-wider text-[#0A0A0A]">
-              Sindy Martinez
-            </p>
-            <p className="font-sans text-[10px] text-gray-500 uppercase tracking-widest mt-0.5">
-              {cur.tag}
-            </p>
-          </div>
-        </div>
-
-        {/* Right Column: Bio */}
-        <div className="flex flex-col justify-center">
-          <p className="script-title text-3xl md:text-4xl text-[#D4AF37]">
-            {cur.sub}
-          </p>
-          <h2 className="deco-title text-4xl md:text-5xl uppercase tracking-wider text-[#0A0A0A] mt-1 mb-6">
+    <section id="services" className="bg-[#0A0A0A] text-white px-6 py-24 relative overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-20 pointer-events-none bg-cover bg-center"
+        style={{ backgroundImage: `url(${IMAGES.corteCabello})` }}
+      />
+      
+      <div className="max-w-[1350px] mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="script-title text-4xl sm:text-5xl text-[#FDFBF7] font-normal drop-shadow-md">
             {cur.title}
           </h2>
-
-          <div className="space-y-4 text-sm text-[#0A0A0A]/80 leading-relaxed font-sans">
-            <p>{cur.p1}</p>
-            <p>{cur.p2}</p>
-            <p>{cur.p3}</p>
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-4 font-sans">
-            <a
-              href={getWhatsAppDefaultUrl(lang)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-xs tracking-wider uppercase font-semibold transition-all bg-[#0A0A0A] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0A0A0A]"
-            >
-              {cur.waBtn}
-            </a>
-            <a
-              href="https://instagram.com/sindym_beautystudio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-xs tracking-wider uppercase font-semibold transition-all border border-[#0A0A0A] text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#D4AF37]"
-            >
-              {cur.igBtn}
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── INTERACTIVE PORTFOLIO GALLERY (EXACT SALON WORK MATCH) ───────────────────
-function Portfolio({ lang }: { lang: Lang }) {
-  const cur = t[lang].portfolio;
-  const [activeTab, setActiveTab] = useState<string>("all");
-
-  const categories = [
-    { id: "all", label: cur.all },
-    { id: "balayage", label: cur.balayage },
-    { id: "smoothing", label: cur.smoothing },
-    { id: "cuts", label: cur.cuts },
-    { id: "therapy", label: cur.therapy },
-    { id: "brows", label: lang === "es" ? "Cejas & Depilación" : "Brows & Shaping" },
-  ];
-
-  const items = [
-    {
-      id: 1,
-      category: "balayage",
-      categoryLabel: cur.balayage,
-      title: lang === "es" ? "Balayage Dorado & Miel ($380+)" : "Golden Honey Balayage ($380+)",
-      desc: lang === "es" ? "Degradado suave en tonos miel con máxima protección y dimensión." : "Soft honey balayage gradient with maximum protection and dimension.",
-      image: IMAGES.portfolio1,
-      duration: "7 h",
-    },
-    {
-      id: 2,
-      category: "smoothing",
-      categoryLabel: cur.smoothing,
-      title: lang === "es" ? "Alisado Orgánico Termo-Protector ($240+)" : "Organic Straightening ($240+)",
-      desc: lang === "es" ? "Alisado de keratina orgánica para un cabello suave, brillante y 100% sin frizz." : "Organic keratin treatment for silky, glossy, 100% frizz-free hair.",
-      image: IMAGES.portfolio6,
-      duration: "5 h 30 min",
-    },
-    {
-      id: 3,
-      category: "balayage",
-      categoryLabel: cur.balayage,
-      title: lang === "es" ? "Reflejos & Babylights ($380+)" : "Reflejos & Contour Babylights ($380+)",
-      desc: lang === "es" ? "Iluminación facial en tonos fríos y cálidos para aportar luz natural." : "Facial contouring and fine babylights for natural brightness.",
-      image: IMAGES.portfolio2,
-      duration: "7 h",
-    },
-    {
-      id: 4,
-      category: "cuts",
-      categoryLabel: cur.cuts,
-      title: lang === "es" ? "Corte de Cabello & Blowout ($30)" : "Haircut & Blowout ($30)",
-      desc: lang === "es" ? "Corte de precisión y peinado con secado o ondas según tu estilo." : "Precision haircut and styling blowout tailored to your facial structure.",
-      image: IMAGES.portfolio4,
-      duration: "40 min",
-    },
-    {
-      id: 5,
-      category: "smoothing",
-      categoryLabel: cur.smoothing,
-      title: lang === "es" ? "Botox Capilar Restaurador ($100-$150)" : "Restorative Hair Botox ($100-$150)",
-      desc: lang === "es" ? "Tratamiento intensivo que restaura la salud del cabello y aporta brillo espejo." : "Intensive treatment restoring hair vitality, softness, and mirror shine.",
-      image: IMAGES.portfolio3,
-      duration: "2 h",
-    },
-    {
-      id: 6,
-      category: "therapy",
-      categoryLabel: cur.therapy,
-      title: lang === "es" ? "Tratamiento Reconstructor / Ozo-Terapia ($120)" : "Reconstructive / Ozone Therapy ($120)",
-      desc: lang === "es" ? "Desintoxicación del cuero cabelludo y reconstrucción profunda de la hebra." : "Scalp detox and deep reconstruction of damaged hair fiber.",
-      image: IMAGES.portfolio5,
-      duration: "2 h",
-    },
-    {
-      id: 7,
-      category: "smoothing",
-      categoryLabel: cur.smoothing,
-      title: lang === "es" ? "Tratamiento de Aminoácidos ($130-$160)" : "Amino Acids Treatment ($130-$160)",
-      desc: lang === "es" ? "Nutrición intensiva que elimina el frizz hasta por 3 meses." : "Intensive nutrition eliminating frizz for up to 3 months.",
-      image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&h=1000&fit=crop&auto=format",
-      duration: "3 h",
-    },
-    {
-      id: 8,
-      category: "brows",
-      categoryLabel: lang === "es" ? "Cejas & Depilación" : "Brows & Shaping",
-      title: lang === "es" ? "Laminado y Depilación de Ceja con Tinte" : "Eyebrow Lamination & Tint",
-      desc: lang === "es" ? "Cejas impecables, alineadas y definidas con un efecto natural y duradero." : "Impeccable, aligned, defined brows with a natural, long-lasting finish.",
-      image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800&h=1000&fit=crop&auto=format",
-      duration: "45 min",
-    },
-  ];
-
-  const filteredItems =
-    activeTab === "all" ? items : items.filter((it) => it.category === activeTab);
-
-  return (
-    <section id="portfolio" className="bg-[#FDFBF7] px-6 py-20 border-t border-gray-200">
-      <div className="max-w-[1300px] mx-auto">
-        <h2 className="deco-title text-center text-3xl md:text-4xl uppercase tracking-[0.14em] text-[#D4AF37] mb-3">
-          {cur.title}
-        </h2>
-        <p className="script-title text-center text-2xl text-[#0A0A0A] mb-10">
-          {cur.sub}
-        </p>
-
-        {/* Filter Tabs (Responsive Mobile Scroll & Alignment Fix) */}
-        <div className="flex overflow-x-auto sm:flex-wrap justify-start sm:justify-center gap-2.5 pb-4 sm:pb-0 mb-10 font-sans no-scrollbar scroll-smooth px-1">
-          {categories.map((c) => (
-            <button
-              key={c.id}
-              onClick={() => setActiveTab(c.id)}
-              className={`px-4 py-2 sm:px-6 sm:py-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 rounded-full border whitespace-nowrap shrink-0 cursor-pointer ${
-                activeTab === c.id
-                  ? "bg-[#0A0A0A] text-[#D4AF37] border-[#0A0A0A] shadow-md scale-[1.02]"
-                  : "bg-white text-[#0A0A0A]/80 border-gray-300 hover:border-[#D4AF37] hover:text-[#0A0A0A]"
-              }`}
-            >
-              {c.label}
-            </button>
-          ))}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredItems.map((item) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {cards.map((c) => (
             <div
-              key={item.id}
-              className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+              key={c.key}
+              className="skeuo-card-dark p-8 rounded-2xl flex flex-col justify-between group"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
-                  style={{
-                    background: "linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 60%)",
-                  }}
-                >
-                  <span className="px-3 py-1 bg-[#D4AF37] text-[#0A0A0A] text-[10px] font-bold uppercase tracking-wider rounded-full">
-                    {item.categoryLabel} • {item.duration}
-                  </span>
+              <div>
+                <div className="flex justify-center mb-6 text-[#D4AF37] filter drop-shadow">
+                  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                  </svg>
                 </div>
+
+                <h3 className="font-serif text-xl sm:text-2xl text-center text-white font-medium mb-4 leading-snug drop-shadow-sm">
+                  {c.title}
+                </h3>
+
+                <p className="font-sans text-xs text-white/75 text-center leading-relaxed mb-8">
+                  {c.desc}
+                </p>
               </div>
 
-              <div className="p-5 flex flex-col flex-1 justify-between text-center">
-                <div>
-                  <h3 className="font-serif font-bold text-base text-[#0A0A0A] mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="font-sans text-xs text-[#0A0A0A]/70 leading-relaxed mb-5">
-                    {item.desc}
-                  </p>
-                </div>
-
+              <div className="text-center pt-4">
                 <a
-                  href={getPortfolioWhatsAppUrl(item.title, item.categoryLabel, lang)}
+                  href={getWhatsAppDefaultUrl(lang)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block rounded-full px-5 py-2.5 text-[10px] font-sans font-bold uppercase tracking-wider bg-[#0A0A0A] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition-colors mt-auto"
+                  className="pill-btn text-xs font-sans"
                 >
-                  {cur.inquireBtn}
+                  <span>{c.btn}</span>
+                  <span className="w-5 h-5 rounded-full skeuo-btn-black text-white flex items-center justify-center text-[10px] font-bold">
+                    ➔
+                  </span>
                 </a>
               </div>
             </div>
@@ -964,170 +556,248 @@ function Portfolio({ lang }: { lang: Lang }) {
   );
 }
 
-// ─── INTERACTIVE TESTIMONIALS SECTION ─────────────────────────────────────────
+// ─── FOUNDER & ABOUT SECTION ──────────────────────────────────────────────────
+function Founder({ lang }: { lang: Lang }) {
+  const cur = t[lang].founder;
+
+  const tickerText =
+    "Where Beauty Meets Healthy Hair • Premium Hair Transformations • Luxury Salon Experience • Personalized Care • Professional Results • ";
+
+  return (
+    <section id="about" className="bg-[#FDFBF7] px-6 py-24 border-b border-gray-300">
+      <div className="mx-auto max-w-[1300px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        {/* Left Column: Sindy Photo */}
+        <div className="relative overflow-hidden rounded-2xl skeuo-card-light p-2">
+          <div className="rounded-xl overflow-hidden relative">
+            <img
+              src={sindyPhoto}
+              alt="Sindy Martinez Founder & Cosmetologist"
+              className="w-full h-[540px] object-cover object-top"
+            />
+
+            <div className="absolute bottom-0 left-0 right-0 bg-[#0A0A0A] text-[#FDFBF7] py-3.5 overflow-hidden border-t border-[#D4AF37]/40 shadow-2xl">
+              <div className="animate-marquee whitespace-nowrap font-sans text-[11px] uppercase tracking-widest font-medium opacity-95 flex gap-4">
+                <span>{tickerText}</span>
+                <span>{tickerText}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: About Text */}
+        <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+          <h2 className="script-title text-5xl sm:text-6xl lg:text-7xl text-[#0A0A0A] mb-8 font-normal drop-shadow-sm w-full text-center lg:text-left">
+            {cur.name}
+          </h2>
+
+          <div className="space-y-5 text-sm sm:text-base text-[#0A0A0A]/85 leading-relaxed font-sans bg-white p-7 rounded-2xl border border-gray-200 shadow-sm text-center lg:text-left w-full">
+            <p className="font-sans">{cur.aboutText}</p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-4 font-sans w-full">
+            <a
+              href={getWhatsAppDefaultUrl(lang)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="skeuo-btn-black text-white px-8 py-3.5 text-xs font-bold tracking-[0.16em] uppercase rounded-xl"
+            >
+              {cur.waBtn}
+            </a>
+            <a
+              href="https://instagram.com/sindym_beautystudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-[#0A0A0A] text-[#0A0A0A] px-8 py-3.5 text-xs font-bold tracking-[0.16em] uppercase rounded-xl hover:bg-[#0A0A0A] hover:text-white transition-all shadow-sm"
+            >
+              {cur.igBtn}
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+// ─── REVIEWS / TESTIMONIALS SECTION ───────────────────────────────────────────
 function Testimonials({ lang }: { lang: Lang }) {
   const cur = t[lang].testimonials;
 
-  const testimonials = [
-    {
-      quote: "Shaylynne really brought what I had in my head to reality! I had hair below my butt that was boring and bland. She truly made cutting off 12 inches of hair feel better, and the reception was so warm throughout.",
-      author: "Cheyanne Fransen",
-    },
-    {
-      quote: "Excelente experiencia en Sindy Martinez Beauty Studio. Desde que llegué me hicieron sentir súper cómoda. El resultado me encantó, mi cabello quedó hermoso, suave y con un brillo increíble.",
-      author: "Emma Pirela",
-    },
-    {
-      quote: "La mejor experiencia y cuidado para mi cabello. Atención, profesionalismo, calidad de servicios y productos 10/10. El cariño con el que te reciben siempre vale oro.",
-      author: "Gabriela González",
-    },
-    {
-      quote: "Soy clienta desde hace más de 3 años y ¡estoy encantada! Siempre me hago el alisado y el corte aquí, y el resultado siempre es impecable.",
-      author: "Emilia Allegro da Silva",
-    },
+  const reviews = [
+    { ...cur.r1, key: "r1" },
+    { ...cur.r2, key: "r2" },
+    { ...cur.r3, key: "r3" },
   ];
 
-  const [activeIdx, setActiveIdx] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [testimonials.length]);
-
   return (
-    <section className="bg-[#F5F0E8] px-6 py-20">
-      <div className="mx-auto max-w-3xl bg-[#FDFBF7] px-8 py-14 text-center border border-gray-200 rounded-3xl shadow-sm relative">
-        <span className="deco-title text-3xl text-[#D4AF37]">”</span>
-        <h2 className="script-title mt-1 text-3xl md:text-4xl text-[#0A0A0A]">
-          {cur.title}
-        </h2>
-        <div className="mt-6 min-h-24">
-          <p className="text-xs md:text-sm italic leading-relaxed text-[#0A0A0A]/75 font-sans">
-            "{testimonials[activeIdx].quote}"
-          </p>
-          <p className="mt-4 text-xs font-sans font-medium tracking-wide text-[#0A0A0A]">
-            — {testimonials[activeIdx].author}
-          </p>
+    <section className="bg-white px-6 py-24 border-b border-gray-300">
+      <div className="max-w-[1300px] mx-auto">
+        
+        <div className="mb-14 border-b border-gray-100 pb-6 text-center sm:text-left">
+          <h2 className="font-serif text-2xl sm:text-3xl text-[#0A0A0A] uppercase tracking-wider font-light">
+            {cur.title}
+          </h2>
         </div>
 
-        {/* Indicators */}
-        <div className="mt-6 flex justify-center items-center gap-3">
-          <button
-            onClick={() =>
-              setActiveIdx((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-            }
-            className="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center text-xs text-[#0A0A0A] hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition-colors"
-          >
-            ←
-          </button>
-          <div className="flex gap-2">
-            {testimonials.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveIdx(idx)}
-                aria-label={`Show testimonial ${idx + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  activeIdx === idx ? "w-6 bg-[#D4AF37]" : "w-2 bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
-          <button
-            onClick={() => setActiveIdx((prev) => (prev + 1) % testimonials.length)}
-            className="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center text-xs text-[#0A0A0A] hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition-colors"
-          >
-            →
-          </button>
+        <div className="grid md:grid-cols-3 gap-8">
+          {reviews.map((r) => (
+            <div key={r.key} className="skeuo-card-light p-8 rounded-2xl flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-1 text-black mb-6 text-sm drop-shadow-sm">
+                  ★★★★★
+                </div>
+
+                <p className="font-sans text-xs sm:text-sm text-[#0A0A0A]/85 leading-relaxed mb-6">
+                  {r.text}
+                </p>
+              </div>
+
+              <p className="font-sans text-xs font-semibold text-[#0A0A0A] tracking-wide pt-4 border-t border-gray-200/60">
+                {r.author}
+              </p>
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );
 }
 
-// ─── "SEE YOU SOON" CTA SECTION ───────────────────────────────────────────────
-function CTASection({ lang }: { lang: Lang }) {
-  const cur = t[lang].cta;
-
+// ─── INSTAGRAM SECTION ────────────────────────────────────────────────────────
+function InstagramSection({ lang }: { lang: Lang }) {
   return (
-    <section className="relative">
-      <img
-        src={IMAGES.ctaDark}
-        alt="Salon ambient background"
-        width="1600"
-        height="800"
-        loading="lazy"
-        className="h-[420px] w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-[#0A0A0A]/55" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-[#FDFBF7]">
-        <h2 className="script-title text-4xl md:text-5xl">{cur.title}</h2>
-        <p className="mt-4 max-w-lg text-sm opacity-90 font-sans">
-          {cur.desc}
+    <section className="bg-[#FDFBF7] px-6 py-24 border-b border-gray-300">
+      <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+        
+        {/* Title above Instagram frame */}
+        <p className="script-title text-3xl sm:text-4xl text-[#D4AF37] mb-2 font-normal">
+          @sindym_beautystudio
         </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4 font-sans">
+
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0A0A0A] font-light uppercase tracking-wider mb-8">
+          {lang === "es"
+            ? "Visita nuestro estudio y síguenos en Instagram"
+            : "View our salon and follow us on Instagram"}
+        </h2>
+
+        {/* Centered Instagram Phone Frame Image */}
+        <div className="flex justify-center my-4">
           <a
-            href={getWhatsAppDefaultUrl(lang)}
+            href="https://instagram.com/sindym_beautystudio"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-w-[9.5rem] items-center justify-center rounded-full px-8 py-3.5 text-xs tracking-wider uppercase font-semibold transition-all bg-[#D4AF37] text-[#0A0A0A] hover:bg-white hover:text-[#0A0A0A] shadow-md"
+            className="relative group transition-all duration-500 hover:scale-105 block"
           >
-            {cur.bookBtn}
+            <img
+              src={IMAGES.igPhoneMockup}
+              alt="SindyM Beauty Studio Instagram Profile"
+              className="w-[320px] sm:w-[380px] md:w-[420px] h-auto object-contain filter drop-shadow-2xl"
+            />
           </a>
         </div>
+
+        {/* Follow CTA Button */}
+        <div className="mt-8">
+          <a
+            href="https://instagram.com/sindym_beautystudio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="skeuo-btn-black text-white px-8 py-4 text-xs font-bold tracking-[0.18em] uppercase rounded-xl inline-flex items-center gap-2"
+          >
+            <svg className="w-4 h-4 fill-current text-[#D4AF37]" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+            <span>{lang === "es" ? "Síguenos en Instagram" : "Follow Us on Instagram"}</span>
+          </a>
+        </div>
+
       </div>
     </section>
   );
 }
 
-// ─── PRODUCTS SHOWCASE ────────────────────────────────────────────────────────
-function Products({ lang }: { lang: Lang }) {
-  const cur = t[lang].products;
+// ─── POLICY AND TERMS SECTION ─────────────────────────────────────────────────
+function PoliciesAndTerms({ lang }: { lang: Lang }) {
+  const cur = t[lang].policies;
 
-  const products =
+  const points =
     lang === "es"
       ? [
-          { img: IMAGES.product1, name: "Aceite de Argán", price: "$25" },
-          { img: IMAGES.product2, name: "Mascarilla Hidratante", price: "$30" },
-          { img: IMAGES.product3, name: "Shampoo Profesional", price: "$30–$35" },
-          { img: IMAGES.product4, name: "Bálsamo Acondicionador", price: "$30" },
+          {
+            num: "01",
+            title: "Aceptación de Términos",
+            desc: "Al reservar en SindyM_BeautyStudio, usted acepta íntegramente nuestras políticas y condiciones de servicio.",
+          },
+          {
+            num: "02",
+            title: "Cancelaciones y Reprogramación",
+            desc: "El estudio se reserva el derecho de reprogramar o cancelar una cita si es necesario, notificándole a la brevedad.",
+          },
+          {
+            num: "03",
+            title: "Puntualidad Requerida",
+            desc: "Llegar a tiempo es indispensable. Los retrasos pueden acortar la duración del servicio o requerir una nueva fecha.",
+          },
+          {
+            num: "04",
+            title: "Cancelaciones Tardías y Ausencias",
+            desc: "Agradecemos notificar cambios con la mayor antelación posible. Las cancelaciones de último momento o ausencias pueden generar cargos.",
+          },
         ]
       : [
-          { img: IMAGES.product1, name: "Argan Oil Serum", price: "$25" },
-          { img: IMAGES.product2, name: "Hydrating Mask", price: "$30" },
-          { img: IMAGES.product3, name: "Professional Shampoo", price: "$30–$35" },
-          { img: IMAGES.product4, name: "Conditioning Balm", price: "$30" },
+          {
+            num: "01",
+            title: "Terms Acceptance",
+            desc: "By booking at SindyM_BeautyStudio, you fully accept our policies and service conditions.",
+          },
+          {
+            num: "02",
+            title: "Cancellation & Rescheduling",
+            desc: "The studio reserves the right to reschedule or cancel appointments when necessary, notifying you as early as possible.",
+          },
+          {
+            num: "03",
+            title: "Punctuality Required",
+            desc: "Arriving on time is essential. Delays may shorten your service duration or require rescheduling.",
+          },
+          {
+            num: "04",
+            title: "Late Cancellations & No-Shows",
+            desc: "Please notify changes as far in advance as possible. Last-minute cancellations or no-shows may incur fees.",
+          },
         ];
 
   return (
-    <section id="products" className="bg-[#FDFBF7] px-6 py-20 border-t border-gray-200">
-      <div className="max-w-[1300px] mx-auto">
-        <h2 className="deco-title text-center text-3xl md:text-4xl uppercase tracking-[0.14em] text-[#D4AF37] mb-12">
-          {cur.title}
-        </h2>
+    <section id="policies" className="bg-[#FDFBF7] px-4 sm:px-6 py-20 border-b border-gray-300">
+      <div className="max-w-4xl mx-auto skeuo-card-light p-6 sm:p-12 rounded-3xl">
+        <div className="text-center mb-10">
+          <span className="font-sans text-[10px] font-bold uppercase tracking-[0.25em] text-[#B88E1C]">
+            {lang === "es" ? "CONDICIONES DEL ESTUDIO" : "STUDIO TERMS"}
+          </span>
+          <h2 className="font-serif text-2xl sm:text-4xl text-[#0A0A0A] uppercase tracking-wider font-light mt-1">
+            {cur.title}
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((p, i) => (
-            <div key={i} className="bg-white border border-gray-200 p-6 text-center transition-all duration-300 hover:border-[#D4AF37] shadow-sm hover:shadow-md rounded-2xl flex flex-col justify-between group">
-              <div>
-                <div className="overflow-hidden rounded-xl mb-4 aspect-square">
-                  <img src={p.img} alt={p.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                </div>
-                <h3 className="font-serif font-bold text-lg text-[#0A0A0A]">{p.name}</h3>
-                <p className="font-sans text-xs text-[#D4AF37] font-semibold mt-1 mb-5">{p.price}</p>
+        <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
+          {points.map((pt) => (
+            <div
+              key={pt.num}
+              className="bg-white/90 border border-gray-200/90 rounded-2xl p-5 sm:p-6 shadow-sm flex items-start gap-4"
+            >
+              <span className="font-serif font-bold text-xs text-[#D4AF37] shrink-0 w-8 h-8 rounded-full bg-[#0A0A0A] flex items-center justify-center shadow-md">
+                {pt.num}
+              </span>
+              <div className="text-left">
+                <h3 className="font-serif font-bold text-sm sm:text-base text-[#0A0A0A] mb-1">
+                  {pt.title}
+                </h3>
+                <p className="font-sans text-xs sm:text-sm text-[#0A0A0A]/80 leading-relaxed">
+                  {pt.desc}
+                </p>
               </div>
-              <a
-                href={getProductWhatsAppUrl(p.name, p.price, lang)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full rounded-full py-3 px-4 text-xs font-sans font-bold uppercase tracking-wider bg-[#D4AF37] text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#D4AF37] transition-all duration-300 shadow-sm mt-auto flex items-center justify-center gap-2"
-              >
-                <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.156 4.229 4.316-1.134z" />
-                </svg>
-                <span>{lang === "es" ? "Ordenar por WhatsApp" : "Order via WhatsApp"}</span>
-              </a>
             </div>
           ))}
         </div>
@@ -1150,66 +820,58 @@ function Contact({ lang }: { lang: Lang }) {
     window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
-  const inputStyle: React.CSSProperties = {
-    width: "100%",
-    background: "#FFFFFF",
-    border: "1px solid #D1D5DB",
-    borderRadius: "12px",
-    padding: "12px 16px",
-    fontSize: "0.875rem",
-    color: "#0A0A0A",
-    outline: "none",
-  };
-
   return (
-    <section id="contact" className="bg-[#FDFBF7] px-6 py-20 border-t border-gray-200">
-      <div className="max-w-xl mx-auto text-center">
-        <h2 className="script-title text-4xl md:text-5xl text-[#D4AF37]">{cur.title}</h2>
-        <p className="font-sans text-xs uppercase tracking-wider text-[#0A0A0A]/70 mt-2 mb-8">
-          {cur.sub}
+    <section id="contact" className="bg-white px-6 py-24 border-b border-gray-300">
+      <div className="max-w-xl mx-auto text-left skeuo-card-light p-8 sm:p-10 rounded-3xl">
+        <h2 className="script-title text-5xl sm:text-6xl text-[#0A0A0A] mb-2 font-normal">
+          {cur.title}
+        </h2>
+        <p className="font-sans text-xs text-[#0A0A0A]/70 mb-8">
+          {cur.desc}
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4 text-left font-sans">
+        <form onSubmit={handleSubmit} className="space-y-4 font-sans">
           <div>
-            <label className="text-xs uppercase tracking-wider block mb-1 text-[#0A0A0A]/70">{cur.name}</label>
+            <label className="text-xs font-semibold block mb-1 text-[#0A0A0A]">{cur.name}</label>
             <input
               type="text"
               required
               placeholder={lang === "es" ? "Tu nombre" : "Your name"}
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              style={inputStyle}
+              className="w-full skeuo-input rounded-xl px-4 py-3 text-sm text-[#0A0A0A]"
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="text-xs uppercase tracking-wider block mb-1 text-[#0A0A0A]/70">{cur.email}</label>
-              <input
-                type="email"
-                required
-                placeholder="your@email.com"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                style={inputStyle}
-              />
-            </div>
-            <div>
-              <label className="text-xs uppercase tracking-wider block mb-1 text-[#0A0A0A]/70">{cur.phone}</label>
-              <input
-                type="tel"
-                placeholder="(469) 000-0000"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                style={inputStyle}
-              />
-            </div>
-          </div>
+
           <div>
-            <label className="text-xs uppercase tracking-wider block mb-1 text-[#0A0A0A]/70">{cur.service}</label>
+            <label className="text-xs font-semibold block mb-1 text-[#0A0A0A]">{cur.email}</label>
+            <input
+              type="email"
+              required
+              placeholder="your@email.com"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="w-full skeuo-input rounded-xl px-4 py-3 text-sm text-[#0A0A0A]"
+            />
+          </div>
+
+          <div>
+            <label className="text-xs font-semibold block mb-1 text-[#0A0A0A]">{cur.phone}</label>
+            <input
+              type="tel"
+              placeholder="(469) 000-0000"
+              value={form.phone}
+              onChange={(e) => setForm({ ...form, phone: e.target.value })}
+              className="w-full skeuo-input rounded-xl px-4 py-3 text-sm text-[#0A0A0A]"
+            />
+          </div>
+
+          <div>
+            <label className="text-xs font-semibold block mb-1 text-[#0A0A0A]">{cur.service}</label>
             <select
               value={form.service}
               onChange={(e) => setForm({ ...form, service: e.target.value })}
-              style={{ ...inputStyle, appearance: "none" }}
+              className="w-full skeuo-input rounded-xl px-4 py-3 text-sm text-[#0A0A0A]"
             >
               <option value="">{lang === "es" ? "Selecciona un servicio…" : "Select a service…"}</option>
               <option value="Corte de cabello">Corte de cabello ($30)</option>
@@ -1224,19 +886,21 @@ function Contact({ lang }: { lang: Lang }) {
               <option value="Laminado y Depilación de Ceja">Laminado y Depilación de Ceja</option>
             </select>
           </div>
+
           <div>
-            <label className="text-xs uppercase tracking-wider block mb-1 text-[#0A0A0A]/70">{cur.message}</label>
+            <label className="text-xs font-semibold block mb-1 text-[#0A0A0A]">{cur.message}</label>
             <textarea
               rows={3}
               placeholder={lang === "es" ? "Escribe tu consulta o preferencia de fecha…" : "Your message or preferred date…"}
               value={form.notes}
               onChange={(e) => setForm({ ...form, notes: e.target.value })}
-              style={{ ...inputStyle, resize: "none" }}
+              className="w-full skeuo-input rounded-xl px-4 py-3 text-sm text-[#0A0A0A] resize-none"
             />
           </div>
+
           <button
             type="submit"
-            className="w-full rounded-full py-4 font-sans font-semibold text-xs tracking-[0.18em] uppercase transition-all bg-[#0A0A0A] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0A0A0A]"
+            className="w-full skeuo-btn-black text-white py-4 font-sans font-bold text-xs tracking-[0.18em] uppercase rounded-xl mt-4"
           >
             {cur.submitBtn}
           </button>
@@ -1246,20 +910,343 @@ function Contact({ lang }: { lang: Lang }) {
   );
 }
 
+// ─── FULL VISUAL SERVICES SHOWCASE ────────────────────────────────────────────
+function FullServicesShowcase({ lang }: { lang: Lang }) {
+  const cur = t[lang].fullServicesShowcase;
+
+  const allServices = [
+    {
+      id: 1,
+      categoryLabel: lang === "es" ? "Cortes de Cabello" : "Haircuts & Styling",
+      title: lang === "es" ? "Corte de cabello ($30)" : "Haircut ($30)",
+      price: "$30",
+      duration: "40 min",
+      desc: lang === "es" ? "Corte de cabello profesional adaptado a la forma de tu rostro y tu estilo único." : "Professional haircut tailored to frame your face and suit your unique style.",
+      image: IMAGES.corteCabello,
+      tag: "ESTILO",
+    },
+    {
+      id: 2,
+      categoryLabel: lang === "es" ? "Colorimetría Avanzada" : "Hair Color",
+      title: lang === "es" ? "Color Profesional ($160+)" : "Hair Color ($160+)",
+      price: "$160+",
+      duration: "2 h 30 min",
+      desc: lang === "es" ? "Servicio de coloración profesional para el cabello con tonos personalizados de alta duración." : "Professional hair coloring service. Wide range of shades and custom techniques.",
+      image: IMAGES.color,
+    },
+    {
+      id: 3,
+      categoryLabel: lang === "es" ? "Balayage & Iluminación" : "Balayage",
+      title: lang === "es" ? "Balayage Profesional ($380+)" : "Balayage ($380+)",
+      price: "$380+",
+      duration: "7 h",
+      desc: lang === "es" ? "Balayage con efecto degradado natural. Ideal para iluminar y dar máxima dimensión al cabello." : "Balayage hair coloring creating a natural gradient effect. Ideal to illuminate and add dimension.",
+      image: IMAGES.balayage,
+      tag: "POPULAR",
+    },
+    {
+      id: 4,
+      categoryLabel: lang === "es" ? "Reflejos & Highlights" : "Highlights",
+      title: lang === "es" ? "Reflejos (Highlights) ($380+)" : "Highlights (Reflejos) ($380+)",
+      price: "$380+",
+      duration: "7 h",
+      desc: lang === "es" ? "Reflejos e iluminaciones con técnicas de precisión para resaltar tu belleza natural." : "Expert highlighting services in a relaxing environment to bring out natural beauty.",
+      image: IMAGES.reflejos,
+    },
+    {
+      id: 5,
+      categoryLabel: lang === "es" ? "Alisados Orgánicos" : "Organic Smoothing",
+      title: lang === "es" ? "Alisado Orgánico ($240+)" : "Organic Straightening ($240+)",
+      price: "$240+",
+      duration: "5 h 30 min",
+      desc: lang === "es" ? "Tratamiento de keratina orgánica para un cabello suave, brillante y 100% sin frizz." : "Keratin smoothing treatment for soft, shiny, frizz-free hair. Restores hair fiber.",
+      image: IMAGES.alisado,
+      tag: "TRATAMIENTO ESTRELLA",
+    },
+    {
+      id: 6,
+      categoryLabel: lang === "es" ? "Botox Capilar" : "Hair Botox",
+      title: lang === "es" ? "Botox Capilar ($100 - $150)" : "Hair Botox ($100 - $150)",
+      price: "$100 - $150",
+      duration: "2 h",
+      desc: lang === "es" ? "Tratamiento intensivo que restaura la salud del cabello, aumenta el brillo y suavidad extrema." : "Intensive treatment restoring hair health, softness, and brilliant mirror shine.",
+      image: IMAGES.botox,
+    },
+    {
+      id: 7,
+      categoryLabel: lang === "es" ? "Terapias Capilares" : "Hair Therapies",
+      title: lang === "es" ? "Tratamiento de Aminoácidos ($130 - $160)" : "Amino Acids Treatment ($130 - $160)",
+      price: "$130 - $160",
+      duration: "3 h",
+      desc: lang === "es" ? "Nutrición intensiva que restaura y aporta brillo al cabello eliminando el frizz hasta por 3 meses." : "Intensive treatment restoring shine and eliminating frizz for up to 3 months.",
+      image: IMAGES.aminoacidos,
+    },
+    {
+      id: 8,
+      categoryLabel: lang === "es" ? "Lavado & Peinado" : "Wash & Blowout",
+      title: lang === "es" ? "Lavado y secado ($50 - $80)" : "Wash & Blowout ($50 - $80)",
+      price: "$50 - $80",
+      duration: "1 h 30 min",
+      desc: lang === "es" ? "Lavado con shampoo profesional, mascarilla exprés y un secado o peinado con ondas impecables." : "Wash with professional shampoo, express hair mask, and a blowout or wavy styling.",
+      image: IMAGES.secado,
+    },
+    {
+      id: 9,
+      categoryLabel: lang === "es" ? "Reconstrucción Capilar" : "Reconstructive Treatment",
+      title: lang === "es" ? "Tratamiento Reconstructor ($120)" : "Reconstructive Treatment ($120)",
+      price: "$120",
+      duration: "2 h",
+      desc: lang === "es" ? "Tratamiento reconstructor intensivo para reparar profundamente la hebra capilar maltratada." : "Intensive reconstruction treatment to deeply repair damaged hair strands.",
+      image: IMAGES.reconstructor,
+    },
+    {
+      id: 10,
+      categoryLabel: lang === "es" ? "Diseño de Cejas" : "Eyebrow Styling",
+      title: lang === "es" ? "Laminado y Depilación de Ceja con Tinte" : "Eyebrow Lamination & Shaping",
+      price: lang === "es" ? "Consulta WhatsApp" : "Inquire WhatsApp",
+      duration: "45 min",
+      desc: lang === "es" ? "Cejas perfectas, definidas y con un efecto natural. El laminado ayuda a alinear y dar forma por semanas." : "Perfect, defined, natural-looking brows. Lamination helps align and shape for weeks.",
+      image: IMAGES.cejas,
+    },
+  ];
+
+  return (
+    <section id="full-services" className="bg-[#FDFBF7] px-6 py-24 border-b border-gray-300">
+      <div className="max-w-[1350px] mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl uppercase tracking-wider text-[#0A0A0A] font-light mb-3">
+            {cur.title}
+          </h2>
+          <p className="font-sans text-xs sm:text-sm text-[#0A0A0A]/70 max-w-xl mx-auto">
+            {cur.sub}
+          </p>
+        </div>
+
+        {/* 10 Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {allServices.map((item) => (
+            <div
+              key={item.id}
+              className="skeuo-card-light rounded-2xl overflow-hidden flex flex-col justify-between group p-2.5 relative"
+            >
+              {item.tag && (
+                <span className="absolute top-5 right-5 z-10 skeuo-btn-black text-[#D4AF37] font-sans font-bold text-[9px] uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
+                  {item.tag}
+                </span>
+              )}
+
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute bottom-3 left-3 bg-black/85 text-white font-sans font-bold text-xs px-3 py-1 rounded-lg backdrop-blur-sm border border-white/20">
+                  {item.price}
+                </div>
+              </div>
+
+              <div className="p-5 flex flex-col flex-1 justify-between text-left">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-[#B88E1C]">
+                      {item.categoryLabel}
+                    </span>
+                    <span className="text-[11px] font-sans text-gray-500 font-medium">
+                      ⏱ {item.duration}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif font-bold text-lg text-[#0A0A0A] mb-2 leading-snug">
+                    {item.title}
+                  </h3>
+
+                  <p className="font-sans text-xs text-[#0A0A0A]/75 leading-relaxed mb-6">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <a
+                  href={getServiceWhatsAppUrl(item.title, item.duration, item.price, lang)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full py-3 text-xs font-sans font-bold uppercase tracking-wider skeuo-btn-black text-white rounded-xl gap-1 mt-auto"
+                >
+                  <span>{cur.bookBtn}</span>
+                  <span className="text-sm">➔</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── PRODUCTS SHOWCASE SECTION (9 REAL CLOUDINARY SALON PRODUCTS) ───────────
+function Products({ lang }: { lang: Lang }) {
+  const cur = t[lang].products;
+
+  const products =
+    lang === "es"
+      ? [
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732228/Joico_Shampoo_acondicionador_hidratante_71_o7skwl.jpg",
+            name: "Joico Duo Shampoo & Acondicionador Hidratante",
+            price: "$71",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732227/Perfect_defense_Protector_de_calor_35_j98fh0.jpg",
+            name: "Perfect Defense Protector de Calor",
+            price: "$35",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Hair_mask_Mascarilla_reparadora_50_cs5cki.jpg",
+            name: "Hair Mask Mascarilla Reparadora",
+            price: "$50",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Mascarilla_hidratante_28_iw9gae.jpg",
+            name: "Mascarilla Hidratante Capilar",
+            price: "$28",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732225/Intense_therapy_Leaven-in_22_omm9fm.jpg",
+            name: "Intense Therapy Leave-In Conditioner",
+            price: "$22",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Shampo_reconstructor_30_rlgyzu.jpg",
+            name: "Shampoo Reconstructor Capilar",
+            price: "$30",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Aceite_olaplex_30_uc93gh.jpg",
+            name: "Aceite Olaplex Reparador",
+            price: "$30",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Aceite_moroccanoil_35_wd6huo.jpg",
+            name: "Aceite Moroccanoil Tratamiento",
+            price: "$35",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Chi_Cabellos_con_keratina_30_kjrspd.jpg",
+            name: "CHI Tratamiento para Cabellos con Keratina",
+            price: "$30",
+          },
+        ]
+      : [
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732228/Joico_Shampoo_acondicionador_hidratante_71_o7skwl.jpg",
+            name: "Joico Hydrating Shampoo & Conditioner Duo",
+            price: "$71",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732227/Perfect_defense_Protector_de_calor_35_j98fh0.jpg",
+            name: "Perfect Defense Heat Protectant Spray",
+            price: "$35",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Hair_mask_Mascarilla_reparadora_50_cs5cki.jpg",
+            name: "Repairing Hair Mask Treatment",
+            price: "$50",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Mascarilla_hidratante_28_iw9gae.jpg",
+            name: "Deep Hydrating Hair Mask",
+            price: "$28",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732225/Intense_therapy_Leaven-in_22_omm9fm.jpg",
+            name: "Intense Therapy Leave-In Conditioner",
+            price: "$22",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Shampo_reconstructor_30_rlgyzu.jpg",
+            name: "Reconstructive Hair Shampoo",
+            price: "$30",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Aceite_olaplex_30_uc93gh.jpg",
+            name: "Olaplex Bonding Hair Oil",
+            price: "$30",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Aceite_moroccanoil_35_wd6huo.jpg",
+            name: "Moroccanoil Treatment Hair Oil",
+            price: "$35",
+          },
+          {
+            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Chi_Cabellos_con_keratina_30_kjrspd.jpg",
+            name: "CHI Keratin Hair Treatment",
+            price: "$30",
+          },
+        ];
+
+  return (
+    <section id="products" className="bg-[#FDFBF7] px-6 py-24 border-b border-gray-300">
+      <div className="max-w-[1350px] mx-auto">
+        <h2 className="font-serif text-center text-3xl sm:text-4xl uppercase tracking-wider text-[#0A0A0A] mb-2 font-light">
+          {cur.title}
+        </h2>
+        <p className="font-sans text-center text-xs text-[#0A0A0A]/70 mb-12">
+          {cur.sub}
+        </p>
+
+        {/* 9 Product Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((p, i) => (
+            <div key={i} className="skeuo-card-light rounded-2xl p-4 text-center flex flex-col justify-between group">
+              <div>
+                <div className="overflow-hidden rounded-xl mb-4 aspect-square border border-gray-200/80 relative">
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-3 right-3 bg-black/85 text-[#D4AF37] font-sans font-bold text-xs px-3 py-1 rounded-lg backdrop-blur-sm border border-white/20 shadow-md">
+                    {p.price}
+                  </div>
+                </div>
+
+                <h3 className="font-serif font-bold text-base text-[#0A0A0A] mb-1 leading-snug">
+                  {p.name}
+                </h3>
+              </div>
+
+              <a
+                href={getProductWhatsAppUrl(p.name, p.price, lang)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 mt-4 text-xs font-sans font-bold uppercase tracking-wider skeuo-btn-black text-white rounded-xl flex items-center justify-center gap-2"
+              >
+                <span>{cur.orderBtn}</span>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── FOOTER ───────────────────────────────────────────────────────────────────
 function Footer({ lang }: { lang: Lang }) {
   const cur = t[lang].footer;
+  const hours = t[lang].hours;
 
   return (
-    <footer className="bg-[#0A0A0A] text-[#FDFBF7] pt-16 pb-12 px-6 lg:px-12 border-t border-[#D4AF37]/20">
+    <footer className="bg-[#0A0A0A] text-white pt-16 pb-12 px-6 lg:px-12 border-t border-white/10 shadow-2xl">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Col 1: Brand & Logo */}
           <div className="md:col-span-1">
-            <span className="block deco-title text-xl tracking-[0.28em] font-serif uppercase text-[#D4AF37]">
+            <span className="block font-serif text-xl tracking-widest font-normal uppercase text-white">
               SINDY MARTINEZ
             </span>
-            <span className="mt-1 block font-sans text-[0.6rem] tracking-[0.45em] text-white/70 uppercase">
+            <span className="mt-0.5 block font-sans text-[9px] tracking-[0.3em] text-[#D4AF37] uppercase">
               BEAUTY STUDIO
             </span>
             <p className="font-sans text-xs text-white/60 leading-relaxed mt-4">
@@ -1269,36 +1256,36 @@ function Footer({ lang }: { lang: Lang }) {
 
           {/* Col 2: Quick Links */}
           <div>
-            <h4 className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#D4AF37] mb-4">
+            <h4 className="font-sans text-xs font-bold uppercase tracking-widest text-[#D4AF37] mb-4">
               {cur.navTitle}
             </h4>
             <ul className="space-y-2.5 font-sans text-xs text-white/70">
               <li><a href="#home" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.home}</a></li>
               <li><a href="#about" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.about}</a></li>
-              <li><a href="#services" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.services}</a></li>
-              <li><a href="#portfolio" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.portfolio}</a></li>
+              <li><a href="#full-services" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.services}</a></li>
               <li><a href="#products" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.products}</a></li>
+              <li><a href="#policies" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.policies}</a></li>
               <li><a href="#contact" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.contact}</a></li>
             </ul>
           </div>
 
-          {/* Col 3: Contact & Hours */}
+          {/* Col 3: Location & Hours */}
           <div>
-            <h4 className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#D4AF37] mb-4">
-              {cur.locationTitle}
+            <h4 className="font-sans text-xs font-bold uppercase tracking-widest text-[#D4AF37] mb-4">
+              {hours.title}
             </h4>
-            <div className="space-y-2.5 font-sans text-xs text-white/70">
+            <div className="space-y-2 font-sans text-xs text-white/80">
               <p className="font-semibold text-white">1425 W Pioneer Dr, Irving, TX 75061</p>
-              <p className="text-[#D4AF37] font-semibold">+1 (469) 439-2021</p>
-              <div className="pt-2 border-t border-white/10 space-y-1 text-[11px]">
-                <p><span className="font-semibold text-[#D4AF37]">{lang === "es" ? "Lunes a Viernes:" : "Mon – Fri:"}</span> 9:00 AM – 6:00 PM</p>
-                <p><span className="font-semibold text-[#D4AF37]">{lang === "es" ? "Sábado:" : "Saturday:"}</span> 9:00 AM – 4:00 PM</p>
-                <p className="text-white/40"><span className="font-medium">{lang === "es" ? "Domingo:" : "Sunday:"}</span> {lang === "es" ? "Cerrado" : "Closed"}</p>
+              <p className="text-[#D4AF37] font-semibold mb-2">+1 (469) 439-2021</p>
+              <div className="pt-2 border-t border-[#D4AF37]/20 space-y-1 text-[11px]">
+                <p><span className="font-semibold text-white/90">Lunes – Viernes:</span> 9:00 AM – 6:00 PM</p>
+                <p><span className="font-semibold text-white/90">Sábado:</span> 9:00 AM – 4:00 PM</p>
+                <p className="text-white/40"><span className="font-medium">Domingo:</span> Cerrado</p>
               </div>
             </div>
           </div>
 
-          {/* Col 4: Logo Emblem & Social Links (FB REMOVED) */}
+          {/* Col 4: Logo Emblem & Social Links */}
           <div className="flex flex-col items-start md:items-center justify-center">
             <img
               src={logo}
@@ -1308,41 +1295,40 @@ function Footer({ lang }: { lang: Lang }) {
             <p className="font-sans text-[11px] text-[#D4AF37] uppercase tracking-wider mb-3">
               {cur.followUs}
             </p>
-            {/* SOCIAL MEDIA ICONS BAR (IG, WA, MAP ONLY) */}
             <div className="flex items-center gap-3">
-              {/* Instagram Icon */}
+              {/* Instagram */}
               <a
                 href="https://instagram.com/sindym_beautystudio"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] hover:text-[#0A0A0A] text-white flex items-center justify-center transition-colors border border-white/20"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] hover:text-[#0A0A0A] text-white flex items-center justify-center transition-colors border border-white/20 shadow-md"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                 </svg>
               </a>
 
-              {/* WhatsApp Icon */}
+              {/* WhatsApp */}
               <a
                 href={getWhatsAppDefaultUrl(lang)}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] hover:text-[#0A0A0A] text-white flex items-center justify-center transition-colors border border-white/20"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] hover:text-[#0A0A0A] text-white flex items-center justify-center transition-colors border border-white/20 shadow-md"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.156 4.229 4.316-1.134z" />
                 </svg>
               </a>
 
-              {/* Map Location Icon */}
+              {/* Location Map */}
               <a
                 href="https://maps.google.com/?q=1425+W+Pioneer+Dr,+Irving,+TX+75061"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Location Map"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] hover:text-[#0A0A0A] text-white flex items-center justify-center transition-colors border border-white/20"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#D4AF37] hover:text-[#0A0A0A] text-white flex items-center justify-center transition-colors border border-white/20 shadow-md"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M12 0c-4.198 0-7.6 3.402-7.6 7.6 0 5.7 7.6 16.4 7.6 16.4s7.6-10.7 7.6-16.4c0-4.198-3.402-7.6-7.6-7.6zm0 10c-1.325 0-2.4-1.075-2.4-2.4s1.075-2.4 2.4-2.4 2.4 1.075 2.4 2.4-1.075 2.4-2.4 2.4z" />
@@ -1361,23 +1347,23 @@ function Footer({ lang }: { lang: Lang }) {
   );
 }
 
-// ─── APP ROOT ─────────────────────────────────────────────────────────────────
+// ─── MAIN APP COMPONENT ───────────────────────────────────────────────────────
 export default function App() {
   const [lang, setLang] = useState<Lang>("es");
 
   return (
-    <div className="min-h-screen flex flex-col font-sans selection:bg-[#D4AF37] selection:text-[#0A0A0A]" style={{ background: "#FDFBF7" }}>
+    <div className="min-h-screen flex flex-col font-sans selection:bg-[#0A0A0A] selection:text-[#D4AF37]" style={{ background: "#FDFBF7" }}>
       <Header lang={lang} setLang={setLang} />
       <main className="flex-1">
         <Hero lang={lang} />
-        <EditorialBanner lang={lang} />
-        <Services lang={lang} />
+        <FeaturedServices lang={lang} />
         <Founder lang={lang} />
-        <Portfolio lang={lang} />
         <Testimonials lang={lang} />
-        <CTASection lang={lang} />
-        <Products lang={lang} />
+        <InstagramSection lang={lang} />
+        <FullServicesShowcase lang={lang} />
+        <PoliciesAndTerms lang={lang} />
         <Contact lang={lang} />
+        <Products lang={lang} />
       </main>
       <Footer lang={lang} />
     </div>
