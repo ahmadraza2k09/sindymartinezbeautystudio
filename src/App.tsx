@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import logo from "./imports/logo_modified_transparent.png";
-import sindyPhoto from "./imports/sindy_photo.png";
+import sindyPhoto from "./imports/sindy_photo.jpg";
 
 type Lang = "es" | "en";
 
@@ -31,18 +31,18 @@ function getServiceWhatsAppUrl(serviceTitle: string, duration: string, price: st
 }
 
 const IMAGES = {
-  corteCabello: "https://i.pinimg.com/1200x/73/c0/46/73c04676738efbd05c9890f8a639da5b.jpg",
-  color: "https://res.cloudinary.com/zse1lija/image/upload/v1787730552/Colour_okpnan.jpg",
-  balayage: "https://res.cloudinary.com/zse1lija/image/upload/v1787730552/Balayage_evgrxo.jpg",
-  reflejos: "https://res.cloudinary.com/zse1lija/image/upload/v1787730553/Reflejos_x8xlux.jpg",
-  alisado: "https://res.cloudinary.com/zse1lija/image/upload/v1787730552/Alisado_Organico_lnortv.jpg",
-  botox: "https://res.cloudinary.com/zse1lija/image/upload/v1787730551/Botox_Capilar_zwihav.jpg",
-  aminoacidos: "https://res.cloudinary.com/zse1lija/image/upload/v1787730554/Aminoa%CC%81cidos_jxwh3y.jpg",
-  secado: "https://res.cloudinary.com/zse1lija/image/upload/v1787730554/Lavado_y_secado_jirymd.jpg",
-  reconstructor: "https://res.cloudinary.com/zse1lija/image/upload/v1787730553/Tratamiento_reconstructor_bwjjuc.jpg",
-  cejas: "https://res.cloudinary.com/zse1lija/image/upload/v1787730558/Laminado_y_depilacion_de_ceja_con_tinte_fnhmoy.jpg",
-  igPhoneMockup: "https://res.cloudinary.com/zse1lija/image/upload/v1787728869/6cc6ac47-6e4f-4e7b-b699-7aebc992121b_Background_Removed_dmg9bi.png",
-  heroBackgroundVideo: "https://res.cloudinary.com/zse1lija/video/upload/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.mp4",
+  corteCabello: "https://i.pinimg.com/736x/73/c0/46/73c04676738efbd05c9890f8a639da5b.jpg",
+  color: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730552/Colour_okpnan.jpg",
+  balayage: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730552/Balayage_evgrxo.jpg",
+  reflejos: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730553/Reflejos_x8xlux.jpg",
+  alisado: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730552/Alisado_Organico_lnortv.jpg",
+  botox: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730551/Botox_Capilar_zwihav.jpg",
+  aminoacidos: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730554/Aminoa%CC%81cidos_jxwh3y.jpg",
+  secado: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730554/Lavado_y_secado_jirymd.jpg",
+  reconstructor: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730553/Tratamiento_reconstructor_bwjjuc.jpg",
+  cejas: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730558/Laminado_y_depilacion_de_ceja_con_tinte_fnhmoy.jpg",
+  igPhoneMockup: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787728869/6cc6ac47-6e4f-4e7b-b699-7aebc992121b_Background_Removed_dmg9bi.png",
+  heroBackgroundVideo: "https://res.cloudinary.com/zse1lija/video/upload/f_auto,q_auto:eco/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.mp4",
 };
 
 const t = {
@@ -272,7 +272,7 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   const leftLinks = [
     { label: cur.home, href: "#home" },
     { label: cur.about, href: "#about" },
-    { label: cur.services, href: "#full-services" },
+    { label: cur.services, href: "#services" },
   ];
 
   const rightLinks = [
@@ -452,6 +452,7 @@ function Hero({ lang }: { lang: Lang }) {
           loop
           muted
           playsInline
+          preload="auto"
           className="w-full h-full object-cover object-[center_22%] filter contrast-105 brightness-100 opacity-90"
         >
           <source src={IMAGES.heroBackgroundVideo} type="video/mp4" />
@@ -537,9 +538,7 @@ function FeaturedServices({ lang }: { lang: Lang }) {
 
               <div className="text-center pt-4">
                 <a
-                  href={getWhatsAppDefaultUrl(lang)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#full-services"
                   className="pill-btn text-xs font-sans"
                 >
                   <span>{c.btn}</span>
@@ -573,6 +572,8 @@ function Founder({ lang }: { lang: Lang }) {
             <img
               src={sindyPhoto}
               alt="Sindy Martinez Founder & Cosmetologist"
+              loading="eager"
+              decoding="async"
               className="w-full h-[540px] object-cover object-top"
             />
 
@@ -693,6 +694,8 @@ function InstagramSection({ lang }: { lang: Lang }) {
             <img
               src={IMAGES.igPhoneMockup}
               alt="SindyM Beauty Studio Instagram Profile"
+              loading="lazy"
+              decoding="async"
               className="w-[320px] sm:w-[380px] md:w-[420px] h-auto object-contain filter drop-shadow-2xl"
             />
           </a>
@@ -1039,6 +1042,8 @@ function FullServicesShowcase({ lang }: { lang: Lang }) {
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute bottom-3 left-3 bg-black/85 text-white font-sans font-bold text-xs px-3 py-1 rounded-lg backdrop-blur-sm border border-white/20">
@@ -1092,94 +1097,94 @@ function Products({ lang }: { lang: Lang }) {
     lang === "es"
       ? [
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732228/Joico_Shampoo_acondicionador_hidratante_71_o7skwl.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732228/Joico_Shampoo_acondicionador_hidratante_71_o7skwl.jpg",
             name: "Joico Duo Shampoo & Acondicionador Hidratante",
             price: "$71",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732227/Perfect_defense_Protector_de_calor_35_j98fh0.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732227/Perfect_defense_Protector_de_calor_35_j98fh0.jpg",
             name: "Perfect Defense Protector de Calor",
             price: "$35",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Hair_mask_Mascarilla_reparadora_50_cs5cki.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Hair_mask_Mascarilla_reparadora_50_cs5cki.jpg",
             name: "Hair Mask Mascarilla Reparadora",
             price: "$50",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Mascarilla_hidratante_28_iw9gae.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Mascarilla_hidratante_28_iw9gae.jpg",
             name: "Mascarilla Hidratante Capilar",
             price: "$28",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732225/Intense_therapy_Leaven-in_22_omm9fm.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732225/Intense_therapy_Leaven-in_22_omm9fm.jpg",
             name: "Intense Therapy Leave-In Conditioner",
             price: "$22",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Shampo_reconstructor_30_rlgyzu.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Shampo_reconstructor_30_rlgyzu.jpg",
             name: "Shampoo Reconstructor Capilar",
             price: "$30",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Aceite_olaplex_30_uc93gh.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Aceite_olaplex_30_uc93gh.jpg",
             name: "Aceite Olaplex Reparador",
             price: "$30",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Aceite_moroccanoil_35_wd6huo.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Aceite_moroccanoil_35_wd6huo.jpg",
             name: "Aceite Moroccanoil Tratamiento",
             price: "$35",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Chi_Cabellos_con_keratina_30_kjrspd.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Chi_Cabellos_con_keratina_30_kjrspd.jpg",
             name: "CHI Tratamiento para Cabellos con Keratina",
             price: "$30",
           },
         ]
       : [
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732228/Joico_Shampoo_acondicionador_hidratante_71_o7skwl.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732228/Joico_Shampoo_acondicionador_hidratante_71_o7skwl.jpg",
             name: "Joico Hydrating Shampoo & Conditioner Duo",
             price: "$71",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732227/Perfect_defense_Protector_de_calor_35_j98fh0.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732227/Perfect_defense_Protector_de_calor_35_j98fh0.jpg",
             name: "Perfect Defense Heat Protectant Spray",
             price: "$35",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Hair_mask_Mascarilla_reparadora_50_cs5cki.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Hair_mask_Mascarilla_reparadora_50_cs5cki.jpg",
             name: "Repairing Hair Mask Treatment",
             price: "$50",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Mascarilla_hidratante_28_iw9gae.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Mascarilla_hidratante_28_iw9gae.jpg",
             name: "Deep Hydrating Hair Mask",
             price: "$28",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732225/Intense_therapy_Leaven-in_22_omm9fm.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732225/Intense_therapy_Leaven-in_22_omm9fm.jpg",
             name: "Intense Therapy Leave-In Conditioner",
             price: "$22",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732226/Shampo_reconstructor_30_rlgyzu.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Shampo_reconstructor_30_rlgyzu.jpg",
             name: "Reconstructive Hair Shampoo",
             price: "$30",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Aceite_olaplex_30_uc93gh.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Aceite_olaplex_30_uc93gh.jpg",
             name: "Olaplex Bonding Hair Oil",
             price: "$30",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Aceite_moroccanoil_35_wd6huo.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Aceite_moroccanoil_35_wd6huo.jpg",
             name: "Moroccanoil Treatment Hair Oil",
             price: "$35",
           },
           {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/v1787732224/Chi_Cabellos_con_keratina_30_kjrspd.jpg",
+            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Chi_Cabellos_con_keratina_30_kjrspd.jpg",
             name: "CHI Keratin Hair Treatment",
             price: "$30",
           },
@@ -1204,6 +1209,8 @@ function Products({ lang }: { lang: Lang }) {
                   <img
                     src={p.img}
                     alt={p.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute bottom-3 right-3 bg-black/85 text-[#D4AF37] font-sans font-bold text-xs px-3 py-1 rounded-lg backdrop-blur-sm border border-white/20 shadow-md">
@@ -1356,14 +1363,14 @@ export default function App() {
       <Header lang={lang} setLang={setLang} />
       <main className="flex-1">
         <Hero lang={lang} />
-        <FeaturedServices lang={lang} />
         <Founder lang={lang} />
+        <FeaturedServices lang={lang} />
+        <FullServicesShowcase lang={lang} />
         <Testimonials lang={lang} />
         <InstagramSection lang={lang} />
-        <FullServicesShowcase lang={lang} />
+        <Products lang={lang} />
         <PoliciesAndTerms lang={lang} />
         <Contact lang={lang} />
-        <Products lang={lang} />
       </main>
       <Footer lang={lang} />
     </div>
