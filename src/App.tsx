@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 const logo = "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787755000/b3162c4d-f06b-4a7e-874a-2d0c29d137df_xkgyku.png";
 import sindyPhoto from "./imports/sindy_photo.jpg";
+import logoModifiedTransparent from "./imports/logo_modified_transparent.png";
 
 type Lang = "es" | "en";
 
@@ -36,9 +37,7 @@ const IMAGES = {
   reconstructor: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730553/Tratamiento_reconstructor_bwjjuc.jpg",
   cejas: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787730558/Laminado_y_depilacion_de_ceja_con_tinte_fnhmoy.jpg",
   igPhoneMockup: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_800/v1787728869/6cc6ac47-6e4f-4e7b-b699-7aebc992121b_Background_Removed_dmg9bi.png",
-  heroBackgroundVideoPoster: "https://res.cloudinary.com/zse1lija/video/upload/so_0,f_auto,q_auto,w_1280/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.jpg",
-  heroBackgroundVideoWebm: "https://res.cloudinary.com/zse1lija/video/upload/f_webm,q_auto:eco,w_720/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.webm",
-  heroBackgroundVideoMp4: "https://res.cloudinary.com/zse1lija/video/upload/f_mp4,q_auto:eco,w_720/v1787730941/f94ef99e-eedf-4e2d-b5b3-7dccdf4320a8_zhg0ei.mp4",
+  heroBanner: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_1600/v1787848366/3d49fe81-e546-4529-8481-6e19c49d6957_bly4v8.jpg",
 };
 
 const t = {
@@ -55,8 +54,8 @@ const t = {
     },
     hero: {
       title: "Sindy Martinez Beauty Studio",
-      p1: "Nos especializamos en la transformación capilar, combinando excelencia, técnicas avanzadas y productos de alta gama sin formol.",
-      p2: "Brindamos una experiencia de bienestar exclusiva y personalizada para lograr un cabello saludable, radiante y duradero.",
+      p1: "Especialistas en transformación capilar y tratamientos de alta gama sin formol.",
+      p2: "",
       bookBtn: "AGENDA TU CITA",
     },
     featuredServices: {
@@ -185,8 +184,8 @@ const t = {
     },
     hero: {
       title: "Sindy Martinez Beauty Studio",
-      p1: "We specialize in hair transformation, combining excellence, advanced techniques, and premium formaldehyde-free products.",
-      p2: "We deliver an exclusive, personalized wellness experience focused on achieving healthy, radiant, long-lasting hair.",
+      p1: "Specialists in hair transformation and premium formaldehyde-free treatments.",
+      p2: "",
       bookBtn: "BOOK APPOINTMENT",
     },
     featuredServices: {
@@ -487,55 +486,40 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   );
 }
 
-// ─── HERO SECTION (100% FULL SCREEN VIEWPORT VIDEO COVER) ─────────────────────
-function Hero({ lang }: { lang: Lang }) {
-  const cur = t[lang].hero;
-
+// ─── HERO SECTION (SINDY PHOTO FULL-BLEED BACKGROUND - TITLE ONLY) ──────────
+function Hero({ lang: _lang }: { lang: Lang }) {
   return (
-    <section id="home" className="bg-[#FDFBF7] border-b border-gray-300 relative overflow-hidden min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-96px)] flex flex-col justify-center items-center py-16 sm:py-24">
+    <section id="home" className="relative min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-96px)] flex items-center justify-center overflow-hidden border-b border-gray-800 bg-[#0A0A0A]">
       
-      {/* Full Page Viewport Background Video */}
+      {/* Full-bleed Owner Photo Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          poster={IMAGES.heroBackgroundVideoPoster}
-          className="w-full h-full object-cover object-[center_22%] filter contrast-105 brightness-100 opacity-90"
-        >
-          <source src={IMAGES.heroBackgroundVideoWebm} type="video/webm" />
-          <source src={IMAGES.heroBackgroundVideoMp4} type="video/mp4" />
-        </video>
-        {/* Subtle, soft gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FDFBF7]/60 via-[#FDFBF7]/35 to-[#FDFBF7]/75" />
+        <img
+          src={sindyPhoto}
+          alt="Sindy Martinez Beauty Studio"
+          className="w-full h-full object-cover object-[center_15%] filter brightness-[0.80] contrast-[1.05]"
+          loading="eager"
+          fetchPriority="high"
+        />
+        {/* Soft Luxury Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
       </div>
 
-      <div className="mx-auto max-w-4xl px-6 relative z-10 flex flex-col items-center text-center">
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#0A0A0A] font-light leading-[1.15] mb-6 tracking-tight drop-shadow-md">
+      {/* Content Overlay - Title Only */}
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 relative z-10 flex flex-col items-center text-center py-16 sm:py-24">
+        <h1 className="font-serif text-5xl sm:text-7xl lg:text-8xl text-white font-light leading-[1.12] tracking-tight drop-shadow-2xl">
           Sindy Martinez <br />
-          <span className="font-normal text-[#1A1A1A]">Beauty Studio</span>
+          <span className="font-normal text-white/95">Beauty Studio</span>
         </h1>
+      </div>
 
-        {/* Clean Natural Description Text */}
-        <div className="space-y-4 text-sm sm:text-base text-[#0A0A0A] leading-relaxed font-sans max-w-2xl text-center font-normal">
-          <p>{cur.p1}</p>
-          <p>{cur.p2}</p>
-        </div>
-
-        <div className="mt-9">
-          <a
-            href={getWhatsAppDefaultUrl(lang)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="skeuo-btn-black text-white px-9 py-4 text-xs font-bold tracking-[0.18em] uppercase inline-flex items-center gap-2 shadow-2xl"
-          >
-            <span>{cur.bookBtn}</span>
-            <span className="text-sm">➔</span>
-          </a>
+      {/* Continuous Marquee Ticker Bar */}
+      <div className="absolute bottom-0 inset-x-0 bg-[#0A0A0A]/90 backdrop-blur-md text-[#FDFBF7] py-3 overflow-hidden border-t border-[#D4AF37]/40 shadow-xl z-20">
+        <div className="animate-marquee whitespace-nowrap font-sans text-xs uppercase tracking-[0.2em] font-medium opacity-90 flex gap-6">
+          <span>HAIR SALON • BEAUTY ROOM • COLORING • HAIR CARE • BOTOX CAPILAR • ORGANIC STRAIGHTENING • BALAYAGE • HIGH LIGHTS • MAKE UP • </span>
+          <span>HAIR SALON • BEAUTY ROOM • COLORING • HAIR CARE • BOTOX CAPILAR • ORGANIC STRAIGHTENING • BALAYAGE • HIGH LIGHTS • MAKE UP • </span>
         </div>
       </div>
+
     </section>
   );
 }
@@ -610,61 +594,35 @@ function FeaturedServices({ lang }: { lang: Lang }) {
 function Founder({ lang }: { lang: Lang }) {
   const cur = t[lang].founder;
 
-  const tickerText =
-    "Where Beauty Meets Healthy Hair • Premium Hair Transformations • Luxury Salon Experience • Personalized Care • Professional Results • ";
-
   return (
-    <section id="about" className="bg-[#FDFBF7] px-6 py-24 border-b border-gray-300">
-      <div className="mx-auto max-w-[1300px] grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section id="about" className="bg-[#FDFBF7] px-6 py-20 border-b border-gray-300">
+      <div className="mx-auto max-w-4xl text-center">
         
-        {/* Left Column: Sindy Photo */}
-        <div className="relative overflow-hidden rounded-2xl skeuo-card-light p-2">
-          <div className="rounded-xl overflow-hidden relative">
-            <img
-              src={sindyPhoto}
-              alt="Sindy Martinez Founder & Cosmetologist"
-              loading="eager"
-              decoding="async"
-              className="w-full h-[540px] object-cover object-top"
-            />
+        <h2 className="script-title text-5xl sm:text-6xl lg:text-7xl text-[#0A0A0A] mb-8 font-normal drop-shadow-sm">
+          {cur.name}
+        </h2>
 
-            <div className="absolute bottom-0 left-0 right-0 bg-[#0A0A0A] text-[#FDFBF7] py-3.5 overflow-hidden border-t border-[#D4AF37]/40 shadow-2xl">
-              <div className="animate-marquee whitespace-nowrap font-sans text-[11px] uppercase tracking-widest font-medium opacity-95 flex gap-4">
-                <span>{tickerText}</span>
-                <span>{tickerText}</span>
-              </div>
-            </div>
-          </div>
+        <div className="space-y-5 text-sm sm:text-base text-[#0A0A0A]/85 leading-relaxed font-sans skeuo-card-light p-8 sm:p-12 rounded-3xl text-center shadow-md">
+          <p className="font-sans">{cur.aboutText}</p>
         </div>
 
-        {/* Right Column: About Text */}
-        <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
-          <h2 className="script-title text-5xl sm:text-6xl lg:text-7xl text-[#0A0A0A] mb-8 font-normal drop-shadow-sm w-full text-center lg:text-left">
-            {cur.name}
-          </h2>
-
-          <div className="space-y-5 text-sm sm:text-base text-[#0A0A0A]/85 leading-relaxed font-sans bg-white p-7 rounded-2xl border border-gray-200 shadow-sm text-center lg:text-left w-full">
-            <p className="font-sans">{cur.aboutText}</p>
-          </div>
-
-          <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-4 font-sans w-full">
-            <a
-              href={getWhatsAppDefaultUrl(lang)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="skeuo-btn-black text-white px-8 py-3.5 text-xs font-bold tracking-[0.16em] uppercase rounded-xl"
-            >
-              {cur.waBtn}
-            </a>
-            <a
-              href="https://instagram.com/sindym_beautystudio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border-2 border-[#0A0A0A] text-[#0A0A0A] px-8 py-3.5 text-xs font-bold tracking-[0.16em] uppercase rounded-xl hover:bg-[#0A0A0A] hover:text-white transition-all shadow-sm"
-            >
-              {cur.igBtn}
-            </a>
-          </div>
+        <div className="mt-9 flex flex-wrap justify-center gap-4 font-sans">
+          <a
+            href={getWhatsAppDefaultUrl(lang)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="skeuo-btn-black text-white px-8 py-4 text-xs font-bold tracking-[0.16em] uppercase rounded-xl shadow-lg transition-transform hover:scale-105"
+          >
+            {cur.waBtn}
+          </a>
+          <a
+            href="https://instagram.com/sindym_beautystudio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-2 border-[#0A0A0A] text-[#0A0A0A] px-8 py-4 text-xs font-bold tracking-[0.16em] uppercase rounded-xl hover:bg-[#0A0A0A] hover:text-white transition-all shadow-sm"
+          >
+            {cur.igBtn}
+          </a>
         </div>
 
       </div>
