@@ -14,13 +14,7 @@ function getWhatsAppDefaultUrl(lang: Lang) {
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
 }
 
-function getProductWhatsAppUrl(productName: string, price: string, lang: Lang) {
-  const text =
-    lang === "es"
-      ? `Hola Sindy! Me gustaría realizar un pedido del siguiente producto:\n\n*Producto:* ${productName}\n*Precio:* ${price}\n\n¿Me podrías indicar los pasos para completar la compra y la entrega? ¡Muchas gracias!`
-      : `Hello Sindy! I would like to place an order for the following product:\n\n*Product:* ${productName}\n*Price:* ${price}\n\nCould you please let me know how to complete the purchase and delivery? Thank you very much!`;
-  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
-}
+
 
 function getServiceWhatsAppUrl(serviceTitle: string, duration: string, price: string, lang: Lang) {
   const text =
@@ -54,7 +48,7 @@ const t = {
       about: "Nosotros",
       services: "Servicios",
       reviews: "Reseñas",
-      products: "Productos",
+      faq: "FAQ",
       policies: "Políticas",
       contact: "Contacto",
       bookNow: "AGENDA TU CITA",
@@ -83,8 +77,8 @@ const t = {
         btn: "Conoce Más",
       },
       card4: {
-        title: "Belleza de Cejas y Pestañas",
-        desc: "Realzamos tu mirada con técnicas profesionales para unas cejas definidas y unas pestañas con un acabado natural y elegante.",
+        title: "Colorimetría y Balayage",
+        desc: "Técnicas avanzadas de coloración profesional, Balayage e iluminación para lograr un tono personalizado y radiante.",
         btn: "Conoce Más",
       },
     },
@@ -95,6 +89,36 @@ const t = {
         "Beautystudio_SindyM es un estudio de belleza gestionado por una estilista profesional con una pasión por realzar la belleza a través de servicios de alta calidad. Nos especializamos en el cuidado capilar Alisado permanente Orgánico, Terapias de Hidratación, Reparación, Botox Capilar Aminoácidos, Cortes de cabello, Color profesional, Balayage, Highlights, en Beautystudio_SindyM te garantizamos un servicio excepcional que resalta tu belleza natural y te hace sentir radiante en cada visita. ¡Déjanos consentirte y resaltar tu belleza única!",
       waBtn: "Hablar por WhatsApp",
       igBtn: "Ver Instagram",
+    },
+    faq: {
+      title: "Preguntas Frecuentes",
+      sub: "Resolvemos tus dudas principales para brindarte la mejor experiencia en el estudio.",
+      items: [
+        {
+          q: "¿Qué diferencia tiene el Alisado Orgánico de otros tratamientos tradicionales?",
+          a: "Nuestro Alisado Orgánico es 100% libre de formol y químicos agresivos. Nutre y restaura la fibra capilar mientras elimina el frizz y alinea el cabello de forma segura, dejando un acabado sedoso, natural y con brillo radiante.",
+        },
+        {
+          q: "¿Cuánto tiempo duran los tratamientos de alisado y botox capilar?",
+          a: "El Alisado Orgánico dura entre 3 y 6 meses dependiendo del tipo de cabello y los cuidados posteriores. El Botox Capilar y los Aminoácidos ofrecen hidratación profunda y control de frizz por aproximadamente 2 a 3 meses.",
+        },
+        {
+          q: "¿Cómo puedo agendar una cita en el estudio?",
+          a: "Puedes agendar tu cita haciendo clic en cualquier botón de 'AGENDA TU CITA' en nuestro sitio web para contactarnos directamente por WhatsApp (+1 469-439-2021) o completando el formulario de contacto al final de la página.",
+        },
+        {
+          q: "¿Necesito una consulta previa antes de un Balayage o cambio de color drástico?",
+          a: "Sí, para servicios de Balayage o aclaraciones intensas recomendamos realizar una evaluación de la salud de tu hebra capilar por WhatsApp o presencial para garantizar el mejor resultado sin comprometer tu cabello.",
+        },
+        {
+          q: "¿Qué cuidados se recomiendan después de un alisado u otro servicio capilar?",
+          a: "Recomendamos lavar el cabello con shampoos libres de sulfatos y aplicar mascarillas nutritivas periódicamente para prolongar la suavidad y el brillo natural.",
+        },
+        {
+          q: "¿Cuáles son las políticas de reprogramación y puntualidad?",
+          a: "Agradecemos llegar a tiempo a tu cita. Si necesitas cancelar o reprogramar, por favor notifícalo con la mayor antelación posible vía WhatsApp para ajustar la agenda del estudio.",
+        },
+      ],
     },
     policies: {
       title: "Políticas y Términos / Policy and Terms",
@@ -119,11 +143,6 @@ const t = {
       title: "Servicios & Precios",
       sub: "Procedimientos realizados con productos de alta gama sin formol y técnicas avanzadas.",
       bookBtn: "Reservar Cita por WhatsApp",
-    },
-    products: {
-      title: "Línea de Productos Profesionales",
-      sub: "Cuida tu cabello en casa con nuestra selección de productos recomendados",
-      orderBtn: "Ordenar por WhatsApp",
     },
     contact: {
       title: "Hablemos",
@@ -159,7 +178,7 @@ const t = {
       about: "About Us",
       services: "Services",
       reviews: "Reviews",
-      products: "Shop",
+      faq: "FAQ",
       policies: "Policies",
       contact: "Contact",
       bookNow: "BOOK APPOINTMENT",
@@ -188,8 +207,8 @@ const t = {
         btn: "Learn More",
       },
       card4: {
-        title: "Brows & Lashes Beauty",
-        desc: "We enhance your look with professional techniques for defined eyebrows and natural, elegant lashes.",
+        title: "Hair Color & Balayage",
+        desc: "Advanced coloring, Balayage, and custom highlight techniques tailored to enhance your style.",
         btn: "Learn More",
       },
     },
@@ -200,6 +219,36 @@ const t = {
         "Beautystudio_SindyM is a beauty studio managed by a professional stylist passionate about enhancing beauty through high-quality services. We specialize in hair care including Organic Permanent Straightening, Hydration & Repair Therapies, Hair Botox, Amino Acids, Haircuts, Professional Hair Color, Balayage, and Highlights. At Beautystudio_SindyM, we guarantee exceptional service that highlights your natural beauty and leaves you feeling radiant on every visit. Let us pamper you and bring out your unique beauty!",
       waBtn: "Chat on WhatsApp",
       igBtn: "View Instagram",
+    },
+    faq: {
+      title: "Frequently Asked Questions",
+      sub: "Find answers to common questions about our studio services and booking.",
+      items: [
+        {
+          q: "How is Organic Straightening different from traditional chemical treatments?",
+          a: "Our Organic Straightening is 100% formaldehyde-free with no harsh fumes. It deeply nourishes and repairs the hair fiber while eliminating frizz, delivering silky, radiant, and smooth hair safely.",
+        },
+        {
+          q: "How long do straightening and Hair Botox treatments last?",
+          a: "Organic Straightening lasts between 3 to 6 months depending on hair type and post-treatment home care. Hair Botox and Amino Acid treatments keep hair hydrated and frizz-free for 2 to 3 months.",
+        },
+        {
+          q: "How can I book an appointment at the studio?",
+          a: "You can book easily by clicking any 'BOOK APPOINTMENT' button on our site to chat directly via WhatsApp (+1 469-439-2021) or by submitting the contact form at the bottom of the page.",
+        },
+        {
+          q: "Do I need a prior consultation before a Balayage or major color transformation?",
+          a: "Yes! For Balayage and major lightening transformations, we recommend a hair health evaluation via WhatsApp or in person to guarantee gorgeous results while keeping your hair strong.",
+        },
+        {
+          q: "What maintenance care is recommended after an organic straightening or hair therapy?",
+          a: "We recommend using sulfate-free shampoos and applying deep hydrating masks periodically to preserve long-lasting smoothness and radiant shine.",
+        },
+        {
+          q: "What are your punctuality and rescheduling policies?",
+          a: "We kindly ask clients to arrive on time. If you need to reschedule or cancel your appointment, please let us know as far in advance as possible via WhatsApp.",
+        },
+      ],
     },
     policies: {
       title: "Policy and Terms",
@@ -224,11 +273,6 @@ const t = {
       title: "Full Services Showcase",
       sub: "Procedures performed with formaldehyde-free premium products and advanced techniques.",
       bookBtn: "Book via WhatsApp",
-    },
-    products: {
-      title: "Professional Hair Care Line",
-      sub: "Maintain your hair at home with our recommended salon products",
-      orderBtn: "Order via WhatsApp",
     },
     contact: {
       title: "Let's Talk",
@@ -281,7 +325,7 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
 
   const rightLinks = [
     { label: cur.reviews, href: "#reviews" },
-    { label: cur.products, href: "#products" },
+    { label: cur.faq, href: "#faq" },
     { label: cur.policies, href: "#policies" },
     { label: cur.contact, href: "#contact" },
   ];
@@ -894,7 +938,6 @@ function Contact({ lang }: { lang: Lang }) {
               <option value="Aminoácidos">Aminoácidos ($130 - $160)</option>
               <option value="Lavado y secado">Lavado y secado ($50 - $80)</option>
               <option value="Tratamiento Reconstructor">Tratamiento Reconstructor ($120)</option>
-              <option value="Laminado y Depilación de Ceja">Laminado y Depilación de Ceja</option>
             </select>
           </div>
 
@@ -1010,15 +1053,6 @@ function FullServicesShowcase({ lang }: { lang: Lang }) {
       desc: lang === "es" ? "Tratamiento reconstructor intensivo para reparar profundamente la hebra capilar maltratada." : "Intensive reconstruction treatment to deeply repair damaged hair strands.",
       image: IMAGES.reconstructor,
     },
-    {
-      id: 10,
-      categoryLabel: lang === "es" ? "Diseño de Cejas" : "Eyebrow Styling",
-      title: lang === "es" ? "Laminado y Depilación de Ceja con Tinte" : "Eyebrow Lamination & Shaping",
-      price: lang === "es" ? "Consulta WhatsApp" : "Inquire WhatsApp",
-      duration: "45 min",
-      desc: lang === "es" ? "Cejas perfectas, definidas y con un efecto natural. El laminado ayuda a alinear y dar forma por semanas." : "Perfect, defined, natural-looking brows. Lamination helps align and shape for weeks.",
-      image: IMAGES.cejas,
-    },
   ];
 
   return (
@@ -1033,7 +1067,7 @@ function FullServicesShowcase({ lang }: { lang: Lang }) {
           </p>
         </div>
 
-        {/* 10 Services Grid */}
+        {/* 9 Hair Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {allServices.map((item) => (
             <div
@@ -1097,150 +1131,59 @@ function FullServicesShowcase({ lang }: { lang: Lang }) {
   );
 }
 
-// ─── PRODUCTS SHOWCASE SECTION (9 REAL CLOUDINARY SALON PRODUCTS) ───────────
-function Products({ lang }: { lang: Lang }) {
-  const cur = t[lang].products;
+// ─── FAQ SECTION ──────────────────────────────────────────────────────────────
+function FaqSection({ lang }: { lang: Lang }) {
+  const cur = t[lang].faq;
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const products =
-    lang === "es"
-      ? [
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732228/Joico_Shampoo_acondicionador_hidratante_71_o7skwl.jpg",
-            name: "Joico Duo Shampoo & Acondicionador Hidratante",
-            price: "$71",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732227/Perfect_defense_Protector_de_calor_35_j98fh0.jpg",
-            name: "Perfect Defense Protector de Calor",
-            price: "$35",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Hair_mask_Mascarilla_reparadora_50_cs5cki.jpg",
-            name: "Hair Mask Mascarilla Reparadora",
-            price: "$50",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Mascarilla_hidratante_28_iw9gae.jpg",
-            name: "Mascarilla Hidratante Capilar",
-            price: "$28",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732225/Intense_therapy_Leaven-in_22_omm9fm.jpg",
-            name: "Intense Therapy Leave-In Conditioner",
-            price: "$22",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Shampo_reconstructor_30_rlgyzu.jpg",
-            name: "Shampoo Reconstructor Capilar",
-            price: "$30",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Aceite_olaplex_30_uc93gh.jpg",
-            name: "Aceite Olaplex Reparador",
-            price: "$30",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Aceite_moroccanoil_35_wd6huo.jpg",
-            name: "Aceite Moroccanoil Tratamiento",
-            price: "$35",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Chi_Cabellos_con_keratina_30_kjrspd.jpg",
-            name: "CHI Tratamiento para Cabellos con Keratina",
-            price: "$30",
-          },
-        ]
-      : [
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732228/Joico_Shampoo_acondicionador_hidratante_71_o7skwl.jpg",
-            name: "Joico Hydrating Shampoo & Conditioner Duo",
-            price: "$71",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732227/Perfect_defense_Protector_de_calor_35_j98fh0.jpg",
-            name: "Perfect Defense Heat Protectant Spray",
-            price: "$35",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Hair_mask_Mascarilla_reparadora_50_cs5cki.jpg",
-            name: "Repairing Hair Mask Treatment",
-            price: "$50",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Mascarilla_hidratante_28_iw9gae.jpg",
-            name: "Deep Hydrating Hair Mask",
-            price: "$28",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732225/Intense_therapy_Leaven-in_22_omm9fm.jpg",
-            name: "Intense Therapy Leave-In Conditioner",
-            price: "$22",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732226/Shampo_reconstructor_30_rlgyzu.jpg",
-            name: "Reconstructive Hair Shampoo",
-            price: "$30",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Aceite_olaplex_30_uc93gh.jpg",
-            name: "Olaplex Bonding Hair Oil",
-            price: "$30",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Aceite_moroccanoil_35_wd6huo.jpg",
-            name: "Moroccanoil Treatment Hair Oil",
-            price: "$35",
-          },
-          {
-            img: "https://res.cloudinary.com/zse1lija/image/upload/f_auto,q_auto,w_600/v1787732224/Chi_Cabellos_con_keratina_30_kjrspd.jpg",
-            name: "CHI Keratin Hair Treatment",
-            price: "$30",
-          },
-        ];
+  const toggleIndex = (i: number) => {
+    setOpenIndex(openIndex === i ? null : i);
+  };
 
   return (
-    <section id="products" className="bg-[#FDFBF7] px-6 py-24 border-b border-gray-300">
-      <div className="max-w-[1350px] mx-auto">
-        <h2 className="font-serif text-center text-3xl sm:text-4xl uppercase tracking-wider text-[#0A0A0A] mb-2 font-light">
-          {cur.title}
-        </h2>
-        <p className="font-sans text-center text-xs text-[#0A0A0A]/70 mb-12">
-          {cur.sub}
-        </p>
+    <section id="faq" className="bg-[#FDFBF7] px-4 sm:px-6 py-24 border-b border-gray-300">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-14">
+          <span className="font-sans text-[10px] font-bold uppercase tracking-[0.25em] text-[#B88E1C] block mb-1">
+            {lang === "es" ? "PREGUNTAS Y RESPUESTAS" : "QUESTIONS & ANSWERS"}
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl uppercase tracking-wider text-[#0A0A0A] font-light mb-3">
+            {cur.title}
+          </h2>
+          <p className="font-sans text-xs sm:text-sm text-[#0A0A0A]/70 max-w-xl mx-auto">
+            {cur.sub}
+          </p>
+        </div>
 
-        {/* 9 Product Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((p, i) => (
-            <div key={i} className="skeuo-card-light rounded-2xl p-4 text-center flex flex-col justify-between group">
-              <div>
-                <div className="overflow-hidden rounded-xl mb-4 aspect-square border border-gray-200/80 relative">
-                  <img
-                    src={p.img}
-                    alt={p.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute bottom-3 right-3 bg-black/85 text-[#D4AF37] font-sans font-bold text-xs px-3 py-1 rounded-lg backdrop-blur-sm border border-white/20 shadow-md">
-                    {p.price}
-                  </div>
-                </div>
-
-                <h3 className="font-serif font-bold text-base text-[#0A0A0A] mb-1 leading-snug">
-                  {p.name}
-                </h3>
-              </div>
-
-              <a
-                href={getProductWhatsAppUrl(p.name, p.price, lang)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-3 mt-4 text-xs font-sans font-bold uppercase tracking-wider skeuo-btn-black text-white rounded-xl flex items-center justify-center gap-2"
+        <div className="space-y-4">
+          {cur.items.map((item, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div
+                key={i}
+                className="skeuo-card-light rounded-2xl overflow-hidden transition-all duration-300 border border-gray-200/90"
               >
-                <span>{cur.orderBtn}</span>
-              </a>
-            </div>
-          ))}
+                <button
+                  onClick={() => toggleIndex(i)}
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+                  aria-expanded={isOpen}
+                >
+                  <span className="font-serif font-semibold text-base sm:text-lg text-[#0A0A0A] pr-2">
+                    {item.q}
+                  </span>
+                  <span className="w-8 h-8 rounded-full bg-[#0A0A0A] text-[#D4AF37] shrink-0 flex items-center justify-center text-xs font-bold shadow-md transition-transform duration-300" style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
+                    ▼
+                  </span>
+                </button>
+
+                {isOpen && (
+                  <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-[#0A0A0A]/80 leading-relaxed font-sans border-t border-gray-100 pt-4 animate-fade-in">
+                    <p>{item.a}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -1279,7 +1222,7 @@ function Footer({ lang }: { lang: Lang }) {
               <li><a href="#about" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.about}</a></li>
               <li><a href="#services" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.services}</a></li>
               <li><a href="#reviews" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.reviews}</a></li>
-              <li><a href="#products" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.products}</a></li>
+              <li><a href="#faq" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.faq}</a></li>
               <li><a href="#policies" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.policies}</a></li>
               <li><a href="#contact" className="hover:text-[#D4AF37] transition-colors">{t[lang].nav.contact}</a></li>
             </ul>
@@ -1377,7 +1320,7 @@ export default function App() {
         <FullServicesShowcase lang={lang} />
         <Testimonials lang={lang} />
         <InstagramSection lang={lang} />
-        <Products lang={lang} />
+        <FaqSection lang={lang} />
         <PoliciesAndTerms lang={lang} />
         <Contact lang={lang} />
       </main>
