@@ -486,62 +486,67 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   );
 }
 
-// ─── HERO SECTION (EXACT DESIGN MATCHING REFERENCE BANNER) ───────────────────
+// ─── HERO SECTION (SIDE-BY-SIDE ON MOBILE & DESKTOP) ────────────────────────
 function Hero({ lang }: { lang: Lang }) {
   const cur = t[lang].hero;
 
   return (
-    <section id="home" className="relative min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-96px)] flex items-center justify-center overflow-hidden border-b border-gray-300 bg-[#F8F5F0] py-12 lg:py-0">
+    <section id="home" className="relative min-h-[380px] sm:min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden border-b border-gray-300 bg-[#F8F5F0] py-6 sm:py-12">
       
-      {/* Background Left Image Container with Seamless Soft Fade Gradient */}
-      <div className="absolute inset-y-0 left-0 w-full lg:w-[58%] overflow-hidden pointer-events-none z-0">
-        <img
-          src={sindyPhoto}
-          alt="Sindy Martinez - Sindy Martinez Beauty Studio"
-          className="w-full h-full object-cover object-[25%_15%] sm:object-[25%_20%] filter brightness-[0.98] contrast-[1.03]"
-          loading="eager"
-          fetchPriority="high"
-        />
-        {/* Horizontal gradient: melts seamlessly into cream background on the right */}
-        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-transparent via-[#F8F5F0]/50 to-[#F8F5F0]" />
-        {/* Vertical gradient: melts into cream background on mobile/tablet */}
-        <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-transparent via-[#F8F5F0]/70 to-[#F8F5F0]" />
-      </div>
-
-      {/* Main Content Layout Overlay */}
-      <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 lg:px-16 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-120px)] py-12 lg:py-20">
+      {/* Split Grid Container: Left = Sindy's Pic | Right = Salon Name & Logo */}
+      <div className="mx-auto max-w-[1400px] w-full px-3 sm:px-8 lg:px-12 relative z-10 grid grid-cols-12 gap-2.5 sm:gap-6 lg:gap-10 items-center">
         
-        {/* Left Column Spacer on Desktop (photo shows through underneath) */}
-        <div className="lg:col-span-5 hidden lg:block" />
+        {/* LEFT SIDE: Sindy Photo (No Border, Seamless Blend) */}
+        <div className="col-span-5 sm:col-span-5 lg:col-span-6 relative h-[260px] xs:h-[300px] sm:h-[450px] lg:h-[600px] overflow-hidden">
+          <img
+            src={sindyPhoto}
+            alt="Sindy Martinez Beauty Studio"
+            className="w-full h-full object-cover object-[25%_15%] sm:object-[25%_20%] filter brightness-[0.98] contrast-[1.03]"
+            loading="eager"
+            fetchPriority="high"
+          />
+          {/* Soft Right & Bottom Gradient Overlay for Seamless Blend */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F8F5F0]/30 to-[#F8F5F0]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#F8F5F0]/60 via-transparent to-transparent sm:hidden" />
+        </div>
 
-        {/* Right Column: Typography & Button (Exact Reference Design) */}
-        <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left gap-6 lg:pl-10">
+        {/* RIGHT SIDE: Salon Name & Logo */}
+        <div className="col-span-7 sm:col-span-7 lg:col-span-6 flex flex-col items-start text-left gap-1.5 sm:gap-4 pl-1 sm:pl-4">
           
-          {/* Main Title Matching Reference Picture Font & Styling */}
-          <div className="space-y-1 sm:space-y-2">
-            <h1 className="font-serif text-5xl sm:text-7xl lg:text-8xl text-[#111111] font-normal leading-[1.05] tracking-tight drop-shadow-sm">
+          {/* Salon Logo */}
+          <div className="shrink-0">
+            <img
+              src={logoModifiedTransparent}
+              alt="Sindy Martinez Beauty Studio Logo"
+              className="h-10 xs:h-14 sm:h-24 md:h-28 lg:h-36 w-auto object-contain filter drop-shadow-[0_3px_8px_rgba(0,0,0,0.15)]"
+            />
+          </div>
+
+          {/* Salon Name Typography */}
+          <div className="space-y-0 sm:space-y-1">
+            <h1 className="font-serif text-lg xs:text-xl sm:text-4xl md:text-5xl lg:text-7xl text-[#111111] font-normal leading-tight tracking-tight">
               Sindy Martinez
             </h1>
-            <p className="font-serif italic text-4xl sm:text-6xl lg:text-7xl text-[#111111] font-light leading-[1.1]">
+            <p className="font-serif italic text-base xs:text-lg sm:text-3xl md:text-4xl lg:text-6xl text-[#111111] font-light leading-tight">
               Beauty Studio
             </p>
           </div>
 
-          {/* Subtitle description */}
-          <p className="font-sans text-xs sm:text-sm text-gray-700 max-w-md font-normal leading-relaxed uppercase tracking-wider opacity-85 pt-1">
+          {/* Short Tagline / Location on larger screens */}
+          <p className="hidden sm:block font-sans text-xs sm:text-sm text-gray-700 max-w-md font-normal leading-relaxed uppercase tracking-wider opacity-85">
             {cur.p1}
           </p>
 
-          {/* Exact Reference Button: Black Skeuomorphic Button with Arrow */}
-          <div className="pt-4">
+          {/* CTA Button: AGENDA TU CITA → */}
+          <div className="pt-1 sm:pt-3 w-full sm:w-auto">
             <a
               href={getWhatsAppDefaultUrl(lang)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 bg-gradient-to-b from-[#242424] to-[#0A0A0A] hover:from-[#333333] hover:to-[#111111] text-white font-sans text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.3)] border border-gray-800 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 group"
+              className="inline-flex items-center justify-center gap-1 sm:gap-3 px-3 py-2 sm:px-8 sm:py-4 bg-gradient-to-b from-[#242424] to-[#0A0A0A] hover:from-[#333333] hover:to-[#111111] text-white font-sans text-[9px] xs:text-[10px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.2em] uppercase rounded-md sm:rounded-lg shadow-md border border-gray-800 transition-all duration-300 active:scale-95 group w-full sm:w-auto"
             >
               <span>{cur.bookBtn}</span>
-              <span className="text-base transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <span className="text-xs sm:text-base transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </div>
 
@@ -550,8 +555,8 @@ function Hero({ lang }: { lang: Lang }) {
       </div>
 
       {/* Marquee Ticker Bar at Bottom */}
-      <div className="absolute bottom-0 inset-x-0 bg-[#0A0A0A] text-[#FDFBF7] py-3 overflow-hidden border-t border-gray-800 shadow-xl z-20">
-        <div className="animate-marquee whitespace-nowrap font-sans text-xs uppercase tracking-[0.2em] font-medium opacity-90 flex gap-6">
+      <div className="absolute bottom-0 inset-x-0 bg-[#0A0A0A] text-[#FDFBF7] py-1.5 sm:py-3 overflow-hidden border-t border-gray-800 shadow-xl z-20">
+        <div className="animate-marquee whitespace-nowrap font-sans text-[9px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] font-medium opacity-90 flex gap-6">
           <span>HAIR SALON • BEAUTY ROOM • COLORING • HAIR CARE • BOTOX CAPILAR • ORGANIC STRAIGHTENING • BALAYAGE • HIGH LIGHTS • MAKE UP • </span>
           <span>HAIR SALON • BEAUTY ROOM • COLORING • HAIR CARE • BOTOX CAPILAR • ORGANIC STRAIGHTENING • BALAYAGE • HIGH LIGHTS • MAKE UP • </span>
         </div>
