@@ -486,77 +486,54 @@ function Header({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   );
 }
 
-// ─── HERO SECTION (SIDE-BY-SIDE ON MOBILE & DESKTOP) ────────────────────────
+// ─── HERO SECTION (FULL PICTURE WITH LOW WHITE FADE & CLEAN BOTTOM TEXT + BUTTON) ──
 function Hero({ lang }: { lang: Lang }) {
   const cur = t[lang].hero;
 
   return (
-    <section id="home" className="relative min-h-[380px] sm:min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden border-b border-gray-300 bg-[#F8F5F0] py-6 sm:py-12">
+    <section id="home" className="relative min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-96px)] flex items-end justify-center overflow-hidden bg-[#FDFBF7]">
       
-      {/* Split Grid Container: Left = Sindy's Pic | Right = Salon Name & Logo */}
-      <div className="mx-auto max-w-[1400px] w-full px-3 sm:px-8 lg:px-12 relative z-10 grid grid-cols-12 gap-2.5 sm:gap-6 lg:gap-10 items-center">
+      {/* Full-Page Sindy Photo Background (No Borders / Outlines) */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <img
+          src={sindyPhoto}
+          alt="Sindy Martinez Beauty Studio"
+          className="w-full h-full object-cover object-[center_18%] filter brightness-[0.98] contrast-[1.02]"
+          loading="eager"
+          fetchPriority="high"
+        />
+        {/* Low White Fade Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FDFBF7] via-[#FDFBF7]/50 to-transparent" />
+      </div>
+
+      {/* Content Overlay: Positioned at Bottom of Image */}
+      <div className="mx-auto max-w-[1400px] w-full px-4 sm:px-8 lg:px-12 relative z-10 flex flex-col items-center text-center pb-20 sm:pb-24 gap-4 sm:gap-6">
         
-        {/* LEFT SIDE: Sindy Photo (No Border, Seamless Blend) */}
-        <div className="col-span-5 sm:col-span-5 lg:col-span-6 relative h-[260px] xs:h-[300px] sm:h-[450px] lg:h-[600px] overflow-hidden">
-          <img
-            src={sindyPhoto}
-            alt="Sindy Martinez Beauty Studio"
-            className="w-full h-full object-cover object-[25%_15%] sm:object-[25%_20%] filter brightness-[0.98] contrast-[1.03]"
-            loading="eager"
-            fetchPriority="high"
-          />
-          {/* Soft Right & Bottom Gradient Overlay for Seamless Blend */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F8F5F0]/30 to-[#F8F5F0]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#F8F5F0]/60 via-transparent to-transparent sm:hidden" />
+        {/* Salon Name (Clean Dark Text, No Golden Outlines) */}
+        <div className="space-y-1 sm:space-y-2">
+          <h1 className="font-serif text-3xl sm:text-6xl lg:text-7xl text-[#0A0A0A] font-light leading-tight tracking-tight drop-shadow-sm">
+            Sindy Martinez <span className="font-normal text-[#0A0A0A]">Beauty Studio</span>
+          </h1>
         </div>
 
-        {/* RIGHT SIDE: Salon Name & Logo */}
-        <div className="col-span-7 sm:col-span-7 lg:col-span-6 flex flex-col items-start text-left gap-1.5 sm:gap-4 pl-1 sm:pl-4">
-          
-          {/* Salon Logo */}
-          <div className="shrink-0">
-            <img
-              src={logoModifiedTransparent}
-              alt="Sindy Martinez Beauty Studio Logo"
-              className="h-10 xs:h-14 sm:h-24 md:h-28 lg:h-36 w-auto object-contain filter drop-shadow-[0_3px_8px_rgba(0,0,0,0.15)]"
-            />
-          </div>
-
-          {/* Salon Name Typography */}
-          <div className="space-y-0 sm:space-y-1">
-            <h1 className="font-serif text-lg xs:text-xl sm:text-4xl md:text-5xl lg:text-7xl text-[#111111] font-normal leading-tight tracking-tight">
-              Sindy Martinez
-            </h1>
-            <p className="font-serif italic text-base xs:text-lg sm:text-3xl md:text-4xl lg:text-6xl text-[#111111] font-light leading-tight">
-              Beauty Studio
-            </p>
-          </div>
-
-          {/* Short Tagline / Location on larger screens */}
-          <p className="hidden sm:block font-sans text-xs sm:text-sm text-gray-700 max-w-md font-normal leading-relaxed uppercase tracking-wider opacity-85">
-            {cur.p1}
-          </p>
-
-          {/* CTA Button: AGENDA TU CITA → */}
-          <div className="pt-1 sm:pt-3 w-full sm:w-auto">
-            <a
-              href={getWhatsAppDefaultUrl(lang)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1 sm:gap-3 px-3 py-2 sm:px-8 sm:py-4 bg-gradient-to-b from-[#242424] to-[#0A0A0A] hover:from-[#333333] hover:to-[#111111] text-white font-sans text-[9px] xs:text-[10px] sm:text-xs font-semibold tracking-[0.1em] sm:tracking-[0.2em] uppercase rounded-md sm:rounded-lg shadow-md border border-gray-800 transition-all duration-300 active:scale-95 group w-full sm:w-auto"
-            >
-              <span>{cur.bookBtn}</span>
-              <span className="text-xs sm:text-base transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </a>
-          </div>
-
+        {/* Book Now Button (Clean Black Button, No Golden Border) */}
+        <div>
+          <a
+            href={getWhatsAppDefaultUrl(lang)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 bg-[#0A0A0A] hover:bg-black text-white font-sans text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase rounded-xl shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 group"
+          >
+            <span>{cur.bookBtn}</span>
+            <span className="text-sm sm:text-base transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </a>
         </div>
 
       </div>
 
-      {/* Marquee Ticker Bar at Bottom */}
-      <div className="absolute bottom-0 inset-x-0 bg-[#0A0A0A] text-[#FDFBF7] py-1.5 sm:py-3 overflow-hidden border-t border-gray-800 shadow-xl z-20">
-        <div className="animate-marquee whitespace-nowrap font-sans text-[9px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] font-medium opacity-90 flex gap-6">
+      {/* Continuous Marquee Ticker Bar at Very Bottom (Clean Gray Border) */}
+      <div className="absolute bottom-0 inset-x-0 bg-[#0A0A0A] text-[#FDFBF7] py-2.5 sm:py-3 overflow-hidden border-t border-gray-800 shadow-xl z-20">
+        <div className="animate-marquee whitespace-nowrap font-sans text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium opacity-90 flex gap-6">
           <span>HAIR SALON • BEAUTY ROOM • COLORING • HAIR CARE • BOTOX CAPILAR • ORGANIC STRAIGHTENING • BALAYAGE • HIGH LIGHTS • MAKE UP • </span>
           <span>HAIR SALON • BEAUTY ROOM • COLORING • HAIR CARE • BOTOX CAPILAR • ORGANIC STRAIGHTENING • BALAYAGE • HIGH LIGHTS • MAKE UP • </span>
         </div>
